@@ -1,3 +1,4 @@
+# pdf intermediaea and output
 *.acn
 *.acr
 *.alg
@@ -45,9 +46,14 @@
 .bak 
 .mtc
 build/
+
+# latex html intermediate
 *.xref
 *.tmp
 *.lg
 *.4tc
 *.4ct
 *.idv
+
+# emacs tmp removal
+*~
