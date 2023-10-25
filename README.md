@@ -35,3 +35,4 @@ The pdf is supposed to be the official formatting of the paper, so if there are 
 pdflatex -output-directory pdf main.tex
 ```
 
+Regardless of whether one is building to pdf or to html, it may be necessary to run the build commands twice in order for things like references and footnotes to be properly linked.
