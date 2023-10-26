@@ -3,8 +3,37 @@ hosts the source files for the paper required for the comprehensive exams for Ph
 
 ## Prerequisites
 
+- web browser
+- pdf viewer
+- latex
+- git
+
+### Web Browser/Pdf Viewer
+
+A web browser is needed to view the output html and a pdfviewer for the pdf output.
+Thankfully firefox combines both functionality into one piece of software.
+Firefox can be obtained from [here.](https://www.mozilla.org/en-US/firefox/all/#product-desktop-release)
+
+### Latex
+
 In order to buildthese files, latex is required.
 Latex can be installed by following the instructions provided [here.](https://www.latex-project.org/get/)
+
+### Git
+
+Git is required for building this paper.
+Although, in principle, you could download a .zip from github directly and unpack it. in which case, ignore the line that says to git clone.
+It usually comes preinstalled with most linux systems.
+It is also preinstalled on OSX.
+A quick way to check if you have it is to
+```bash
+git --version
+```
+
+if git is installed, it should return a version number.
+
+If git is not installed, you should be able to install it with the package manager for your operating system.
+More detailed instructions can be found [here.](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Building from Source
 
