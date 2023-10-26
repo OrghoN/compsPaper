@@ -66,6 +66,9 @@ The following command will build the html output and put it in the `docs/` direc
 
 ```bash
 htlatex main.tex "" "" -ddocs/
+bibtex main
+htlatex main.tex "" "" -ddocs/
+htlatex main.tex "" "" -ddocs/
 ```
 
 ### pdf
@@ -74,6 +77,9 @@ The following command will build the pdf.
 The pdf is supposed to be the official formatting of the paper, so if there are any differences from the html version, the pdf is considered definitive.
 
 ```bash
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
 pdflatex main.tex
 ```
 

@@ -94,10 +94,7 @@
 \captionsetup{labelsep=period, justification=raggedright, singlelinecheck=false}
 %% appendix
 \usepackage{appendix}
-%% biblatex
-%\usepackage[style=apa,language=american,maxnames=4,minnames=3,sortcites=true]{biblatex}
-%\DeclareLanguageMapping{american}{american-apa}
-%\addbibresource{ref.bib}
+
 %% uses times font
 \usepackage{mathptmx}
 %% set fontsize
@@ -299,14 +296,13 @@ Thesis Committee: Name of Thesis Supervisor, \myadvisor
 %\include{9_chap_3}
 %% main contents %%
 
-%% ref %%
+%% ref bibtex%%
 \clearpage
-%\section{references}
-%\printbibliography[heading=none]
+
 \bibliographystyle{unsrt}
 \bibliography{ref.bib}
 \nocite{*}
-%% ref %%
+%% ref bibtex%%
 
 %% appendix %%
 %\appendix
