@@ -18,6 +18,17 @@ git clone https://github.com/OrghoN/compsPaper
 cd compsPaper
 ```
 
+### automatic build script
+
+The following command runs the build script. It builds both the pdf and html taking references into account and thus only needs to be run once.
+It also removes intermediary files.
+
+*Note: The html generated from this script is named `index.html` and is placed in the `html/`  directory and is not named `main.html` as one might expect*
+
+```bash
+source build.html
+```
+
 ### html
 
 The following command will build the html output and put it in the `html/` directory. However the intermediate files do get dumped out in themain directory of the repo.
