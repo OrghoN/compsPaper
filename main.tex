@@ -95,9 +95,9 @@
 %% appendix
 \usepackage{appendix}
 %% biblatex
-\usepackage[style=apa,language=american,maxnames=4,minnames=3,sortcites=true]{biblatex}
-\DeclareLanguageMapping{american}{american-apa}
-\addbibresource{ref.bib}
+%\usepackage[style=apa,language=american,maxnames=4,minnames=3,sortcites=true]{biblatex}
+%\DeclareLanguageMapping{american}{american-apa}
+%\addbibresource{ref.bib}
 %% uses times font
 \usepackage{mathptmx}
 %% set fontsize
@@ -110,6 +110,7 @@
 \setlength{\parindent}{6.5ex}
 %% customize heading styles
 \usepackage[indentafter]{titlesec}
+\usepackage[numbers]{natbib}
 %%%% heading 1
 \titleformat{\section}
   {\normalsize\center}
@@ -289,7 +290,7 @@ Thesis Committee: Name of Thesis Supervisor, \myadvisor
 %% arabic for the rest
 \pagenumbering{arabic}
 
-\begin{doublespace}
+%\begin{doublespace}
   %% main contents %%
   \include{introduction}
 
@@ -299,9 +300,12 @@ Thesis Committee: Name of Thesis Supervisor, \myadvisor
 %% main contents %%
 
 %% ref %%
-\newpage
-\section{references}
-\printbibliography[heading=none]
+\clearpage
+%\section{references}
+%\printbibliography[heading=none]
+\bibliographystyle{unsrt}
+\bibliography{ref.bib}
+\nocite{*}
 %% ref %%
 
 %% appendix %%
@@ -311,7 +315,7 @@ Thesis Committee: Name of Thesis Supervisor, \myadvisor
 %% appendix %%
 
 
-\end{doublespace}
+%\end{doublespace}
 
 
 \end{document}
