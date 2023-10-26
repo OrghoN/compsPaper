@@ -1,8 +1,8 @@
 #!/bin/sh
 
 #build pdf
-pdflatex -output-directory pdf main.tex
-pdflatex -output-directory pdf main.tex
+pdflatex main.tex
+pdflatex main.tex
 
 # build html
 htlatex main.tex "" "" -ddocs/
@@ -22,11 +22,20 @@ rm *.idv
 rm *.dvi
 rm *.bcf
 rm *.run.xml
-
 rm main.log
+rm *.toc
+rm *.out
+rm *.lot
+rm *.lof
+rm *.blg
+rm *.bbl
 
+# remove emacs backup files
 rm *~
 
 # renamemain.html to index for github pages
 mv docs/main.html docs/index.html
+
+# move pdf output to pdf/ directory
+mv main.pdf pdf/main.pdf
 
