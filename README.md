@@ -1,5 +1,7 @@
 # compsPaper
-hosts the source files for the paper required for the comprehensive exams for PhD.
+hosts the source files for the paper required for the comprehensive exams for PhD.## Paper output
+
+The online version of the paper can be viewed [here.](https://orghon.github.io/compsPaper/)
 
 ## Prerequisites
 
