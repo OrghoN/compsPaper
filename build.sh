@@ -11,12 +11,19 @@ htlatex main.tex "" "" -ddocs/
 # remove intermediates and html output from main directory
 rm *.html
 rm *.css
-rm docs/*.xref
-rm docs/*.tmp
-rm docs/*.lg
-rm docs/*.4tc
-rm docs/*.4ct
-rm docs/*.idv
+
+rm *.aux
+rm *.xref
+rm *.tmp
+rm *.lg
+rm *.4tc
+rm *.4ct
+rm *.idv
+rm *.dvi
+rm *.bcf
+rm *.run.xml
+
+rm main.log
 
 rm *~
 
