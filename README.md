@@ -21,7 +21,7 @@ Latex can be installed by following the instructions provided [here.](https://ww
 
 ### Git
 
-Git is required for building this paper.
+Git is helpful for building this paper.
 Although, in principle, you could download a .zip from github directly and unpack it. in which case, ignore the line that says to git clone.
 It usually comes preinstalled with most linux systems.
 It is also preinstalled on OSX.
@@ -37,7 +37,7 @@ More detailed instructions can be found [here.](https://git-scm.com/book/en/v2/G
 
 ## Building from Source
 
-The repository contains the html output because it is plaintext and it can be found in the `html/` directory.
+The repository contains the html output because it is plaintext and it can be found in the `docs/` directory.
 The pdf will have to be built from source. Building the files in both formats can be done as follows.
 
 The first step is to clone the repo using
@@ -52,18 +52,18 @@ cd compsPaper
 The following command runs the build script. It builds both the pdf and html taking references into account and thus only needs to be run once.
 It also removes intermediary files.
 
-*Note: The html generated from this script is named `index.html` and is placed in the `html/`  directory and is not named `main.html` as one might expect*
+*Note: The html generated from this script is named `index.html` and is placed in the `docs/`  directory and is not named `main.html` as one might expect*
 
 ```bash
-source build.html
+source build.sh
 ```
 
 ### html
 
-The following command will build the html output and put it in the `html/` directory. However the intermediate files do get dumped out in themain directory of the repo.
+The following command will build the html output and put it in the `docs/` directory. However the intermediate files do get dumped out in themain directory of the repo.
 
 ```bash
-htlatex main.tex "" "" -dhtml/
+htlatex main.tex "" "" -ddocs/
 ```
 
 ### pdf
