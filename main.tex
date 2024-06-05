@@ -24,6 +24,7 @@
 %%%%%% start: define some names here %%%%%%
 
 \usepackage{geometry}
+\usepackage{float}
  \geometry{
  letterpaper,
  left=2.54cm,
@@ -287,34 +288,34 @@ Thesis Committee: Name of Thesis Supervisor, \myadvisor
 %% arabic for the rest
 \pagenumbering{arabic}
 
-%\begin{doublespace}
+\begin{doublespace}
   %% main contents %%
-\include{introduction}
-\include{neutrinoDetection}
-\include{machineLearning}
+  \include{introduction}
+  \include{neutrinoDetection}
+  \include{machineLearning}
 
-  %\include{9_chap_1}
-%\include{9_chap_2}
-%\include{9_chap_3}
-%% main contents %%
+  % \include{9_chap_1}
+  % \include{9_chap_2}
+  % \include{9_chap_3}
+  %% main contents %%
 
-%% ref bibtex%%
-\clearpage
+  %% ref bibtex%%
+  \clearpage
 
-\bibliographystyle{unsrt}
-\bibliography{ref.bib}
-\nocite{*}
-%% ref bibtex%%
+  \bibliographystyle{unsrt}
+  \bibliography{ref.bib}
+  \nocite{*}
+  %% ref bibtex%%
 
-%% appendix %%
-%\appendix
-%\include{9_chap_a}
-%\include{9_chap_b}
+  %% appendix %%
+  % \appendix
+  % \include{9_chap_a}
+  % \include{9_chap_b}
 
-%% appendix %%
+  %% appendix %%
 
 
-%\end{doublespace}
+\end{doublespace}
 
 
 \end{document}
