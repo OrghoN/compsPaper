@@ -21,7 +21,7 @@ DETECTOR</h2>
 <div class="author" ></div><br />
 <div class="date" ></div>
       </div>
-<!--l. 217--><p class="indent" >      &#x00A0;<br 
+<!--l. 218--><p class="indent" >      &#x00A0;<br 
 class="newline" />&#x00A0;<br 
 class="newline" />&#x00A0;<br 
 class="newline" />&#x00A0;<br 
@@ -30,13 +30,13 @@ class="newline" />&#x00A0;<br
 class="newline" />
 <div class="center" 
 >
-<!--l. 218--><p class="noindent" >
-<!--l. 219--><p class="noindent" >by</div>
+<!--l. 219--><p class="noindent" >
+<!--l. 220--><p class="noindent" >by</div>
 <div class="center" 
 >
-<!--l. 222--><p class="noindent" >
-<!--l. 223--><p class="noindent" >Orgho Neogi</div>
-<!--l. 225--><p class="noindent" >&#x00A0;<br 
+<!--l. 223--><p class="noindent" >
+<!--l. 224--><p class="noindent" >Orgho Neogi</div>
+<!--l. 226--><p class="noindent" >&#x00A0;<br 
 class="newline" />&#x00A0;<br 
 class="newline" />&#x00A0;<br 
 class="newline" />&#x00A0;<br 
@@ -45,34 +45,34 @@ class="newline" />&#x00A0;<br
 class="newline" />
 <div class="center" 
 >
-<!--l. 226--><p class="noindent" >
-<!--l. 227--><p class="noindent" >A thesis submitted in partial fulfillment<br />
+<!--l. 227--><p class="noindent" >
+<!--l. 228--><p class="noindent" >A thesis submitted in partial fulfillment<br />
 of the requirements for the Doctor of Philosophy<br />
 degree in Physics &amp; Astronomy&#x00A0;in the<br />
 Graduate College of<br />
 The University of Iowa</div>
 <div class="center" 
 >
-<!--l. 234--><p class="noindent" >
+<!--l. 235--><p class="noindent" >
                                                                                          
                                                                                          
-<!--l. 235--><p class="noindent" >May&#x00A0;2024</div>
+<!--l. 236--><p class="noindent" >May&#x00A0;2024</div>
 <div class="center" 
 >
-<!--l. 238--><p class="noindent" >
-<!--l. 239--><p class="noindent" >Thesis Committee: Name of Thesis Supervisor, Jane Nachtman</div>
+<!--l. 239--><p class="noindent" >
+<!--l. 240--><p class="noindent" >Thesis Committee: Name of Thesis Supervisor, Jane Nachtman</div>
 <div class="center" 
 >
-<!--l. 241--><p class="noindent" >
-<!--l. 242--><p class="noindent" >Yaser Onel</div>
+<!--l. 242--><p class="noindent" >
+<!--l. 243--><p class="noindent" >Yaser Onel</div>
 <div class="center" 
 >
-<!--l. 244--><p class="noindent" >
-<!--l. 245--><p class="noindent" >Milind Diwan</div>
+<!--l. 245--><p class="noindent" >
+<!--l. 246--><p class="noindent" >Milind Diwan</div>
 <div class="center" 
 >
-<!--l. 247--><p class="noindent" >
-<!--l. 248--><p class="noindent" >Mary Hall Reno</div>
+<!--l. 248--><p class="noindent" >
+<!--l. 249--><p class="noindent" >Mary Hall Reno</div>
                                                                                          
                                                                                          
 <blockquote class="quote">
@@ -150,8 +150,10 @@ href="#x1-90002.2" id="QQ2-1-11">DUNE</a></span>
 href="#x1-100002.3" id="QQ2-1-12">NOVA</a></span>
 <br />      &#x00A0;<span class="sectionToc" >3 <a 
 href="#x1-110003" id="QQ2-1-13">Machine Learning</a></span>
+<br />      &#x00A0;&#x00A0;<span class="subsectionToc" >3.1 <a 
+href="#x1-120003.1" id="QQ2-1-16">Perceptron</a></span>
 <br />      &#x00A0;<span class="sectionToc" ><a 
-href="#Q1-1-17">References</a></span>
+href="#Q1-1-20">References</a></span>
       </div>
                                                                                          
                                                                                          
@@ -169,7 +171,10 @@ href="#Q1-1-17">References</a></span>
  id="Q1-1-5"></a>
       <div class="tableofcontents"><span class="lofToc" >1&#x00A0;<a 
 href="#x1-11001r1">Example of a basic decision tree</a></span><br /><span class="lofToc" >2&#x00A0;<a 
-href="#x1-11002r2">Example of a basic Neural Net</a></span><br />
+href="#x1-11002r2">Example of a basic Neural
+Net</a></span><br /><span class="lofToc" >3&#x00A0;<a 
+href="#x1-12003r3">Perceptron Neuron</a></span><br /><span class="lofToc" >4&#x00A0;<a 
+href="#x1-12005r4">Perceptron network</a></span><br />
       </div>
                                                                                          
                                                                                          
@@ -323,6 +328,112 @@ it.
 to be a black box for us. We can take a peek under the hood and see how these models work. To do so, we
 start up from the basic models like a perceptron and work our way to a graph neural network, finally
 connecting it to how neutrino reconstruction works.
+      <h4 class="subsectionHead"><span class="titlemark">3.1    </span> <a 
+ id="x1-120003.1"></a>Perceptron</h4>
+<!--l. 3--><p class="noindent" >A lot of things that seem incredibly easy to humans &#8211; such as recognizing the difference between say a cat
+and a dog &#8211; are very difficult for computers to do. What makes it difficult to make that sort of
+classification is that it is hard for humans to define concrete rules about what makes the picture of a
+cat different than the picture of a dog. Neural nets approach this in a completely different
+fashion.
+<!--l. 7--><p class="indent" >      Instead of trying to define rules about the features that differentiate the
+                                                                                         
+                                                                                         
+picture of a dog vs a cat, we instead classify a whole bunch of pictures by hand.
+<span class="footnote-mark"><a 
+href="main4.html#fn3x0"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x1-12001f3"></a> Then
+throw those pictures at the algorithm with the correct answers and over time the computer learns to tell the
+difference between that of a dog and a cat. We call an algorithm like this that separates things into two
+piles a binary classifier. There are many different kinds of binary classifiers with a whole host
+of advantages and disadvantages but we will start with one that is simple to understand; the
+perceptron.
+<!--l. 13--><p class="indent" >      <hr class="figure"><div class="figure" 
+>
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!--l. 15--><p class="noindent" ><img 
+src="figures/perceptron1.png" alt="PIC"  
+width="341" height="341" > <a 
+ id="x1-12003r3"></a>
+<br />                                                                                         <div class="caption" 
+><span class="id">
+Figure&#x00A0;3. </span><span  
+class="content">Perceptron Neuron                                                               </span></div><!--tex4ht:label?: x1-12003r3 -->
+                                                                                         
+                                                                                         
+<!--l. 18--><p class="indent" >      </div><hr class="endfigure">
+<!--l. 20--><p class="indent" >      A perceptron takes a number of inputs that are binary in nature and produce a single binary output
+ie.is this a dog? The figure <a 
+href="#x1-12003r3">3<!--tex4ht:ref: perceptron1 --></a> has 3 inputs (<span 
+class="zptmcm7m-x-x-120">x</span><sub><span 
+class="zptmcm7t-x-x-90">1</span></sub>, <span 
+class="zptmcm7m-x-x-120">x</span><sub><span 
+class="zptmcm7t-x-x-90">2</span></sub> and <span 
+class="zptmcm7m-x-x-120">x</span><sub><span 
+class="zptmcm7t-x-x-90">3</span></sub>) although, more or fewer inputs may be used.
+Each input then is given a weight &#8211; <span 
+class="zptmcm7m-x-x-120">w</span><sub><span 
+class="zptmcm7t-x-x-90">1</span></sub>, <span 
+class="zptmcm7m-x-x-120">w</span><sub><span 
+class="zptmcm7t-x-x-90">2</span></sub> and <span 
+class="zptmcm7m-x-x-120">w</span><sub><span 
+class="zptmcm7t-x-x-90">3</span></sub> in this case &#8211; and the output calculated
+thus.
+<!--l. 23--><p class="indent" >
+<table 
+class="align">
+                             <tr><td 
+class="align-odd"><span 
+class="zptmcm7m-x-x-120">y </span><span 
+class="zptmcm7t-x-x-120">= </span><img 
+src="main0x.png" alt="(
+|
+|||| 0 if &#x2211;i wixi &#x2264; threshhold,
+|{
+  1 if &#x2211; w x &#x003E; threshhold,
+|||       i i i
+|||
+("  class="left" align="middle"></td>                             <td 
+class="align-even"></td>                             <td 
+class="align-label"><a 
+ id="x1-12004r1"></a>(1)                             </td></tr></table>
+<!--l. 30--><p class="indent" >      Used in this fashion, a perceptron can only make simple choices. Raising the threshold makes
+the classification tighter while lowering it loosens the classification. Because the output of
+a perceptron is binary, for more subtle distinctions, we can use the output of a perceptron
+to feed into the input of the next one thus creating a network that is more able to measure
+subtlety.
+<!--l. 34--><p class="indent" >      <hr class="figure"><div class="figure" 
+>
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!--l. 36--><p class="noindent" ><img 
+src="figures/network.png" alt="PIC"  
+width="341" height="341" > <a 
+ id="x1-12005r4"></a>
+<br />                                                                                         <div class="caption" 
+><span class="id">
+Figure&#x00A0;4. </span><span  
+class="content">Perceptron network                                                              </span></div><!--tex4ht:label?: x1-12005r4 -->
+                                                                                         
+                                                                                         
+<!--l. 39--><p class="indent" >      </div><hr class="endfigure">
+<!--l. 41--><p class="indent" >      Varying the weights of the inputs in combination with the threshold for the output allows us to get
+different models of classification. The neurons in the first layer are only able to make simple decisions
+based on the raw input but because we use their output as the input to the second layer, the
+second layer can make more abstract decisions with a degree of subtlety impossible not only
+with one perceptron but also with even a single layer of perceptrons. The complexity of the
+discrimination by the classifier increasing with both the number and layers of perceptrons in the
+network.
+<!--l. 45--><p class="indent" >      With the correct weights and threshold values, we can get any binary classifier we want using a set
+of perceptrons. That, however, puts us back at our original problem of classifying whether something is a
+dog; namely, if we knew what features to look for (i.e.&#x00A0;what weights and threshold to use) it
+wouldn&#8217;t be hard explaining to a computer what a dog was. The true innovation comes with using
+learning algorithms that don&#8217;t require input from the programmer to set these weights and
+thresholds.
                                                                                          
                                                                                          
                                                                                          
@@ -330,9 +441,9 @@ connecting it to how neutrino reconstruction works.
                                                                                          
                                                                                          
       <h3 class="likesectionHead"><a 
- id="x1-12000"></a>References</h3>
+ id="x1-13000"></a>References</h3>
 <a 
- id="Q1-1-17"></a>
+ id="Q1-1-20"></a>
 <!--l. 1--><p class="noindent" >
     <div class="thebibliography">
     <p class="bibitem" ><span class="biblabel">

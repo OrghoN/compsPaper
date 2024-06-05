@@ -11,6 +11,20 @@
 .ptmr7t-{font-family: monospace,monospace;}
 .ptmr7t-{font-family: monospace,monospace;}
 .zptmcm7m-{font-size:83%; font-weight: bold; font-style: italic;}
+.zptmcm7m-{ font-weight: bold; font-style: italic;}
+.zptmcm7m-{ font-weight: bold; font-style: italic;}
+.zptmcm7t-x-x-120{ font-weight: bold; font-style: italic;}
+.zptmcm7t-x-x-120{ font-weight: bold; font-style: italic;}
+.zptmcm7t-x-x-90{font-size:75%; font-weight: bold; font-style: italic;}
+.zptmcm7t-x-x-90{ font-weight: bold; font-style: italic;}
+.zptmcm7m-x-x-120{ font-weight: bold; font-style: italic;}
+.zptmcm7m-x-x-120{ font-weight: bold; font-style: italic;}
+.zptmcm7m-x-x-120{ font-weight: bold; font-style: italic;}
+.zptmcm7m-x-x-90{font-size:75%; font-weight: bold; font-style: italic;}
+.zptmcm7m-x-x-90{ font-weight: bold; font-style: italic;}
+.zptmcm7m-x-x-90{ font-weight: bold; font-style: italic;}
+.zptmcm7y-x-x-120{ font-weight: bold; font-style: italic;}
+.zptmcm7v-x-x-120{ font-weight: bold; font-style: italic;}
 .ptmri7t-x-x-120{font-style: italic;}
 p{margin-top:0;margin-bottom:0}
 p.indent{text-indent:0;}
@@ -127,6 +141,19 @@ div.author{white-space: nowrap;}
 div.abstract p {margin-left:5%; margin-right:5%;}
 div.abstract {width:100%;}
 .abstracttitle{text-align:center;margin-bottom:1em;}
+.equation td{text-align:center; }
+.equation-star td{text-align:center; }
+table.equation-star { width:100%; }
+table.equation { width:100%; }
+table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:95%; margin-left:5%; white-space: nowrap;}
+table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
+td.align-label { width:5%; text-align:center; }
+td.align-odd { text-align:right; padding-right:0.3em;}
+td.align-even { text-align:left; padding-right:0.6em;}
+table.multline, table.multline-star {width:100%;}
+td.gather {text-align:center; }
+table.gather {width:100%;}
+div.gather-star {text-align:center;}
 .rotatebox{display: inline-block;}
 /* end css.sty */
 
