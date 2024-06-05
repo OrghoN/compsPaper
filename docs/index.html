@@ -154,8 +154,10 @@ href="#x1-110003" id="QQ2-1-13">Machine Learning</a></span>
 href="#x1-120003.1" id="QQ2-1-16">Perceptron Neuron</a></span>
 <br />      &#x00A0;&#x00A0;<span class="subsectionToc" >3.2 <a 
 href="#x1-130003.2" id="QQ2-1-19">Sigmoid Neuron</a></span>
+<br />      &#x00A0;&#x00A0;<span class="subsectionToc" >3.3 <a 
+href="#x1-140003.3" id="QQ2-1-21">Neural Network</a></span>
 <br />      &#x00A0;<span class="sectionToc" ><a 
-href="#Q1-1-22">References</a></span>
+href="#Q1-1-24">References</a></span>
       </div>
                                                                                          
                                                                                          
@@ -177,7 +179,9 @@ href="#x1-11002r2">Example of a basic Neural
 Net</a></span><br /><span class="lofToc" >3&#x00A0;<a 
 href="#x1-12003r3">Perceptron Neuron</a></span><br /><span class="lofToc" >4&#x00A0;<a 
 href="#x1-12005r4">Perceptron network</a></span><br /><span class="lofToc" >5&#x00A0;<a 
-href="#x1-13004r5">Sigmoid Function</a></span><br />
+href="#x1-13004r5">Sigmoid Function</a></span><br /><span class="lofToc" >6&#x00A0;<a 
+href="#x1-14001r6">Parts
+of a Neural Net</a></span><br />
       </div>
                                                                                          
                                                                                          
@@ -534,6 +538,46 @@ neurons can be used in it&#8217;s stead which retain the property of having a sm
 small change in output. Some of the more popular of these functions (called activation functions) are
 RELU and softmax. Each have their own advantages and disadvantages and may even be mixed in the
 same neural network
+      <h4 class="subsectionHead"><span class="titlemark">3.3    </span> <a 
+ id="x1-140003.3"></a>Neural Network</h4>
+<!--l. 3--><p class="noindent" >A number of these sigmoid neurons (or neurons with other activation functions) can be strung together to
+make a neural network. Each neural network has 3 main parts.
+<!--l. 6--><p class="indent" >      <hr class="figure"><div class="figure" 
+>
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!--l. 8--><p class="noindent" ><img 
+src="figures/neuralNet1.png" alt="PIC"  
+width="341" height="341" > <a 
+ id="x1-14001r6"></a>
+<br />                                                                                         <div class="caption" 
+><span class="id">
+Figure&#x00A0;6. </span><span  
+class="content">Parts of a Neural Net                                                             </span></div><!--tex4ht:label?: x1-14001r6 -->
+                                                                                         
+                                                                                         
+<!--l. 11--><p class="indent" >      </div><hr class="endfigure">
+<!--l. 13--><p class="indent" >      First, we have an input layer. This is all the inputs that go into a neural network and is
+usually represented as a vector. Each input adds one to the dimension of the input vector. Even
+something like a 2d picture can have its rows stitched together to make one long vector of
+inputs.
+<!--l. 18--><p class="indent" >      The middle bits are called the hidden layer, not for any profound reason, but just to distinguish
+them from the input and output layers. You can have as many hidden middle layers as you want in the
+network. The trade off is usually one of efficiency and accuracy. The more hidden layers you have, the
+more accurate the output will bebut at the cost of requiring more time to train because there are more
+weights to get right. After a point, adding more layers does not improve accuracy in meaningful way
+while still taking longer to train. This makes creating a good neural net less of a hard science and more of
+an art form.
+<!--l. 25--><p class="indent" >      Finally, we have the output layer. This layer usually has one neuron for each thing the classifier can
+bin the input into. In the dog and cat case, we would have <span 
+class="zptmcm7t-x-x-120">2 </span>output neurons, one that signifies dog and the
+other cat. However, the neurons won&#8217;t directly tell us whether the picture contains a dog or a cat but rather
+give us two values. One of these values indicates how likely it is for this picture to contain a cat and the
+other represents the likelyhood that the picture contains a dog. After that, it is still up to us to decide
+on cutoff values to determine whether we will say the picture contains a cat, a dog, both or
+neither.
                                                                                          
                                                                                          
                                                                                          
@@ -541,9 +585,9 @@ same neural network
                                                                                          
                                                                                          
       <h3 class="likesectionHead"><a 
- id="x1-14000"></a>References</h3>
+ id="x1-15000"></a>References</h3>
 <a 
- id="Q1-1-22"></a>
+ id="Q1-1-24"></a>
 <!--l. 1--><p class="noindent" >
     <div class="thebibliography">
     <p class="bibitem" ><span class="biblabel">
