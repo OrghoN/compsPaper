@@ -1,11 +1,12 @@
-\subsection{Perceptron}
+\subsection{Perceptron Neuron}
 
 A lot of things that seem incredibly easy to humans -- such as  recognizing the difference between say a cat and a dog -- are very difficult for computers to do.
 What makes it difficult to make that sort of classification is that it is hard for humans to define concrete rules about what makes the picture of a cat different than the picture of a dog.
 Neural nets approach this in a completely different fashion.
 
 Instead of trying to define rules about the features that differentiate the picture of a dog vs a cat, we instead classify a whole bunch of pictures by hand.
-\footnote{This is true only for supervised learning. Unsupervised learning doesn't require classification by hand but have their own set of disadvantages}
+\footnote{This is true only for supervised learning.
+Unsupervised learning doesn't require classification by hand but have their own set of disadvantages}
 Then throw those pictures at the algorithm with the correct answers and over time the computer learns to tell the difference between that of a dog and a cat.
 We call an algorithm like this that separates things into two piles a binary classifier.
 There are many different kinds of binary classifiers with a whole host of advantages and disadvantages but we will start with one that is simple to understand; the perceptron.
@@ -45,3 +46,12 @@ The complexity of the discrimination by the classifier increasing with both the 
 With the correct weights and threshold values, we can get any binary classifier we want using a set of perceptrons.
 That, however, puts us back at our original problem of classifying whether something is a dog; namely, if we knew what features to look for (i.e.\ what weights and threshold to use) it wouldn't be hard explaining to a computer what a dog was.
 The true innovation comes with using learning algorithms that don't require input from the programmer to set these weights and thresholds.
+
+  If we want to use algorithms that can adjust weights and thresholds (otherwise called biases) automatically, we need some method where a small change in the weight only causes a small change in the output.
+Because perceptrons are binary, this is impossible to do with only perceptrons.
+
+  A small change in the weight to an input to the perceptron can flip the output entirely.
+While this small change in weight can make one of the outputs of the network better, it may also affect the rest of the network behave in unpredictable ways.
+Going back to the dog and cat example, while changing the weight slightly may make it better at recognizing dogs, it may wreak havoc on how cats are identified.
+
+  This is where sigmoid neurons come in.

@@ -151,9 +151,11 @@ href="#x1-100002.3" id="QQ2-1-12">NOVA</a></span>
 <br />      &#x00A0;<span class="sectionToc" >3 <a 
 href="#x1-110003" id="QQ2-1-13">Machine Learning</a></span>
 <br />      &#x00A0;&#x00A0;<span class="subsectionToc" >3.1 <a 
-href="#x1-120003.1" id="QQ2-1-16">Perceptron</a></span>
+href="#x1-120003.1" id="QQ2-1-16">Perceptron Neuron</a></span>
+<br />      &#x00A0;&#x00A0;<span class="subsectionToc" >3.2 <a 
+href="#x1-130003.2" id="QQ2-1-19">Sigmoid Neuron</a></span>
 <br />      &#x00A0;<span class="sectionToc" ><a 
-href="#Q1-1-20">References</a></span>
+href="#Q1-1-22">References</a></span>
       </div>
                                                                                          
                                                                                          
@@ -174,7 +176,8 @@ href="#x1-11001r1">Example of a basic decision tree</a></span><br /><span class=
 href="#x1-11002r2">Example of a basic Neural
 Net</a></span><br /><span class="lofToc" >3&#x00A0;<a 
 href="#x1-12003r3">Perceptron Neuron</a></span><br /><span class="lofToc" >4&#x00A0;<a 
-href="#x1-12005r4">Perceptron network</a></span><br />
+href="#x1-12005r4">Perceptron network</a></span><br /><span class="lofToc" >5&#x00A0;<a 
+href="#x1-13004r5">Sigmoid Function</a></span><br />
       </div>
                                                                                          
                                                                                          
@@ -329,7 +332,7 @@ to be a black box for us. We can take a peek under the hood and see how these mo
 start up from the basic models like a perceptron and work our way to a graph neural network, finally
 connecting it to how neutrino reconstruction works.
       <h4 class="subsectionHead"><span class="titlemark">3.1    </span> <a 
- id="x1-120003.1"></a>Perceptron</h4>
+ id="x1-120003.1"></a>Perceptron Neuron</h4>
 <!--l. 3--><p class="noindent" >A lot of things that seem incredibly easy to humans &#8211; such as recognizing the difference between say a cat
 and a dog &#8211; are very difficult for computers to do. What makes it difficult to make that sort of
 classification is that it is hard for humans to define concrete rules about what makes the picture of a
@@ -347,13 +350,13 @@ difference between that of a dog and a cat. We call an algorithm like this that 
 piles a binary classifier. There are many different kinds of binary classifiers with a whole host
 of advantages and disadvantages but we will start with one that is simple to understand; the
 perceptron.
-<!--l. 13--><p class="indent" >      <hr class="figure"><div class="figure" 
+<!--l. 14--><p class="indent" >      <hr class="figure"><div class="figure" 
 >
                                                                                          
                                                                                          
                                                                                          
                                                                                          
-<!--l. 15--><p class="noindent" ><img 
+<!--l. 16--><p class="noindent" ><img 
 src="figures/perceptron1.png" alt="PIC"  
 width="341" height="341" > <a 
  id="x1-12003r3"></a>
@@ -363,8 +366,8 @@ Figure&#x00A0;3. </span><span
 class="content">Perceptron Neuron                                                               </span></div><!--tex4ht:label?: x1-12003r3 -->
                                                                                          
                                                                                          
-<!--l. 18--><p class="indent" >      </div><hr class="endfigure">
-<!--l. 20--><p class="indent" >      A perceptron takes a number of inputs that are binary in nature and produce a single binary output
+<!--l. 19--><p class="indent" >      </div><hr class="endfigure">
+<!--l. 21--><p class="indent" >      A perceptron takes a number of inputs that are binary in nature and produce a single binary output
 ie.is this a dog? The figure <a 
 href="#x1-12003r3">3<!--tex4ht:ref: perceptron1 --></a> has 3 inputs (<span 
 class="zptmcm7m-x-x-120">x</span><sub><span 
@@ -381,7 +384,7 @@ class="zptmcm7t-x-x-90">2</span></sub> and <span
 class="zptmcm7m-x-x-120">w</span><sub><span 
 class="zptmcm7t-x-x-90">3</span></sub> in this case &#8211; and the output calculated
 thus.
-<!--l. 23--><p class="indent" >
+<!--l. 24--><p class="indent" >
 <table 
 class="align">
                              <tr><td 
@@ -399,18 +402,18 @@ src="main0x.png" alt="(
 class="align-even"></td>                             <td 
 class="align-label"><a 
  id="x1-12004r1"></a>(1)                             </td></tr></table>
-<!--l. 30--><p class="indent" >      Used in this fashion, a perceptron can only make simple choices. Raising the threshold makes
+<!--l. 31--><p class="indent" >      Used in this fashion, a perceptron can only make simple choices. Raising the threshold makes
 the classification tighter while lowering it loosens the classification. Because the output of
 a perceptron is binary, for more subtle distinctions, we can use the output of a perceptron
 to feed into the input of the next one thus creating a network that is more able to measure
 subtlety.
-<!--l. 34--><p class="indent" >      <hr class="figure"><div class="figure" 
+<!--l. 35--><p class="indent" >      <hr class="figure"><div class="figure" 
 >
                                                                                          
                                                                                          
                                                                                          
                                                                                          
-<!--l. 36--><p class="noindent" ><img 
+<!--l. 37--><p class="noindent" ><img 
 src="figures/network.png" alt="PIC"  
 width="341" height="341" > <a 
  id="x1-12005r4"></a>
@@ -420,20 +423,117 @@ Figure&#x00A0;4. </span><span
 class="content">Perceptron network                                                              </span></div><!--tex4ht:label?: x1-12005r4 -->
                                                                                          
                                                                                          
-<!--l. 39--><p class="indent" >      </div><hr class="endfigure">
-<!--l. 41--><p class="indent" >      Varying the weights of the inputs in combination with the threshold for the output allows us to get
+<!--l. 40--><p class="indent" >      </div><hr class="endfigure">
+<!--l. 42--><p class="indent" >      Varying the weights of the inputs in combination with the threshold for the output allows us to get
 different models of classification. The neurons in the first layer are only able to make simple decisions
 based on the raw input but because we use their output as the input to the second layer, the
 second layer can make more abstract decisions with a degree of subtlety impossible not only
 with one perceptron but also with even a single layer of perceptrons. The complexity of the
 discrimination by the classifier increasing with both the number and layers of perceptrons in the
 network.
-<!--l. 45--><p class="indent" >      With the correct weights and threshold values, we can get any binary classifier we want using a set
+<!--l. 46--><p class="indent" >      With the correct weights and threshold values, we can get any binary classifier we want using a set
 of perceptrons. That, however, puts us back at our original problem of classifying whether something is a
 dog; namely, if we knew what features to look for (i.e.&#x00A0;what weights and threshold to use) it
 wouldn&#8217;t be hard explaining to a computer what a dog was. The true innovation comes with using
 learning algorithms that don&#8217;t require input from the programmer to set these weights and
 thresholds.
+<!--l. 50--><p class="indent" >      If we want to use algorithms that can adjust weights and thresholds (otherwise called
+biases) automatically, we need some method where a small change in the weight only causes a
+small change in the output. Because perceptrons are binary, this is impossible to do with only
+perceptrons.
+<!--l. 53--><p class="indent" >      A small change in the weight to an input to the perceptron can flip the output entirely. While this
+small change in weight can make one of the outputs of the network better, it may also affect the rest of the
+network behave in unpredictable ways. Going back to the dog and cat example, while changing the
+weight slightly may make it better at recognizing dogs, it may wreak havoc on how cats are
+identified.
+<!--l. 57--><p class="indent" >      This is where sigmoid neurons come in.
+      <h4 class="subsectionHead"><span class="titlemark">3.2    </span> <a 
+ id="x1-130003.2"></a>Sigmoid Neuron</h4>
+                                                                                         
+                                                                                         
+<!--l. 3--><p class="noindent" >While perceptrons are effectively step functions, flipping from <span 
+class="zptmcm7t-x-x-120">0 </span>to <span 
+class="zptmcm7t-x-x-120">1</span>, sigmoids are more smoothed out.
+This means that a small change in the weight can lead to a small change in output. The sigmoid function
+can be written as
+<!--l. 7--><p class="indent" >
+<table 
+class="align">
+                                       <tr><td 
+class="align-odd"><span 
+class="zptmcm7m-x-x-120">&#x03C3; </span><span 
+class="zptmcm7t-x-x-120">=</span> <img 
+src="main1x.png" alt="---1---
+1+ e- z"  class="frac" align="middle"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label"><a 
+ id="x1-13001r2"></a>(2)                                       </td></tr></table>
+<!--l. 11--><p class="indent" >      This means that a sigmoid neuron can be written as
+<!--l. 13--><p class="indent" >
+<table 
+class="align">
+                                      <tr><td 
+class="align-odd"><img 
+src="main2x.png" alt="      1
+-------&#x2211;w-x--b
+1 + e   i ii"  class="frac" align="middle"></td>                                      <td 
+class="align-even"></td>                                      <td 
+class="align-label"><a 
+ id="x1-13002r3"></a>(3)                                      </td></tr></table>
+                                                                                         
+                                                                                         
+<!--l. 17--><p class="indent" >      where the <span 
+class="zptmcm7m-x-x-120">b </span>stands for the bias of every input. While this looks different than the perceptron at first
+glance it is just a more smoothed out version of it. One key thing that we lose with the introduction of
+sigmoids is the linearity that perceptrons afforded us. What we gain is the ability for our programs to
+automatically adjust their weights and biases because a small change in weights does lead to small change
+in output as shown in equation <a 
+href="#x1-13003r4">4<!--tex4ht:ref: bias --></a>.
+<!--l. 22--><p class="indent" >
+<table 
+class="align">
+                                 <tr><td 
+class="align-odd"><span 
+class="zptmcm7t-x-x-120">&#x0394;</span><span 
+class="zptmcm7m-x-x-120">y </span><span 
+class="zptmcm7y-x-x-120">&#x2248;</span><span 
+class="zptmcm7v-x-x-120">&#x2211;</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><img 
+src="main3x.png" alt="-&#x2202;y-
+&#x2202;wi"  class="frac" align="middle"><span 
+class="zptmcm7t-x-x-120">&#x0394;</span><span 
+class="zptmcm7m-x-x-120">w</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7t-x-x-120">+</span><img 
+src="main4x.png" alt="&#x2202;y-
+&#x2202;b"  class="frac" align="middle"><span 
+class="zptmcm7t-x-x-120">&#x0394;</span><span 
+class="zptmcm7m-x-x-120">b</span></td>                                 <td 
+class="align-even"></td>                                 <td 
+class="align-label"><a 
+ id="x1-13003r4"></a>(4)                                 </td></tr></table>
+<!--l. 26--><p class="indent" >      <hr class="figure"><div class="figure" 
+>
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!--l. 28--><p class="noindent" ><img 
+src="figures/sigmoid.png" alt="PIC"  
+width="341" height="341" > <a 
+ id="x1-13004r5"></a>
+<br />                                                                                         <div class="caption" 
+><span class="id">
+Figure&#x00A0;5. </span><span  
+class="content">Sigmoid Function                                                                </span></div><!--tex4ht:label?: x1-13004r5 -->
+                                                                                         
+                                                                                         
+<!--l. 31--><p class="indent" >      </div><hr class="endfigure">
+<!--l. 33--><p class="indent" >      More than the exact formula of the sigmoid neuron what matters is the shape. As a result, other
+neurons can be used in it&#8217;s stead which retain the property of having a small change in weight lead to a
+small change in output. Some of the more popular of these functions (called activation functions) are
+RELU and softmax. Each have their own advantages and disadvantages and may even be mixed in the
+same neural network
                                                                                          
                                                                                          
                                                                                          
@@ -441,9 +541,9 @@ thresholds.
                                                                                          
                                                                                          
       <h3 class="likesectionHead"><a 
- id="x1-13000"></a>References</h3>
+ id="x1-14000"></a>References</h3>
 <a 
- id="Q1-1-20"></a>
+ id="Q1-1-22"></a>
 <!--l. 1--><p class="noindent" >
     <div class="thebibliography">
     <p class="bibitem" ><span class="biblabel">
