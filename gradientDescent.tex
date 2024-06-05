@@ -1,0 +1,28 @@
+\subsection{Gradient Descent}
+
+So far we've talked about the fact that weights and biases can be adjusted and that it only works if a small change creates only a small change in output while glossing over how exactly the computer automatically calculates these weights.
+Time to peel back that layer!
+\footnote{pun very much intended}
+We use a technique called gradient descent.
+
+To start off, we need a set of inputs $x$ where we already know the answers $y$.
+This is called the training dataset.
+Once the weights and biases are adjusted we can then use the model to query a set of inputs that we don't know and be reasonably certain that it won't give us garbage outputs.
+To do this adjustment, we need to define a cost function.
+
+\begin{align}
+  C(w,b) = \frac{1}{2n} \sum_x || y(x) - a||^2
+\end{align}
+
+Where $n$ is the number of training samples and $a$ is the vector of outputs from the network.
+We want a set of weights that make the cost as small as possible and we can do that through a method called gradient descent.
+The function described here is not the only cost function possible but is a simple one to start with.
+To use gradient descent, we can do
+
+\begin{align}
+  \Delta v = - \eta \nabla C
+\end{align}
+
+where $v$ is the set of weights and biases and $\eta$ is the learning rate.
+The more aggressive we set $\eta$ the quicker training will go, but it may end up actually increasing the cost function.
+So we want an $\eta$ that is small but not too small.
