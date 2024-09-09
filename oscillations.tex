@@ -1,0 +1,42 @@
+\subsection{Neutrino Oscillations}
+
+Neutrino oscillation is a quantum phenomenon whereby a neutrino created with a specific lepton flavor can change into another flavor as it propagates through space.
+This behavior is a direct consequence of the fact that neutrinos have mass and the flavor eigenstates .
+
+
+The flavor states \(\nu_\alpha\) (\(\alpha = e, \mu, \tau\)) are related to the mass states \(\nu_i\) (\(i = 1, 2, 3\)) through a unitary transformation.
+This transformation can be expressed as:
+
+\begin{align}
+|\nu_\alpha\rangle &= \sum_{i} U_{\alpha i} |\nu_i\rangle,
+\end{align}
+
+where \(U_{\alpha i}\) are elements of the PMNS matrix, which is a unitary matrix describing the mixing between the flavor and mass eigenstates.
+
+When a neutrino is produced in a flavor eigenstate, it propagates as a superposition of mass eigenstates.
+If we denote the neutrino state produced at \(t = 0\) as \(|\nu_\alpha\rangle\), its time evolution in terms of the mass eigenstates is given by:
+
+\begin{align}
+|\nu_\alpha(t)\rangle &= \sum_{i} U_{\alpha i} e^{-i E_i t} |\nu_i\rangle,
+\end{align}
+
+where \(E_i\) is the energy of the mass eigenstate \(\nu_i\), and \(t\) is the time of propagation.
+
+The probability of detecting a neutrino of flavor \(\beta\) after a time \(t\) is given by the squared modulus of the amplitude:
+
+\begin{align}
+P(\nu_\alpha \to \nu_\beta; t) &= \left| \langle \nu_\beta | \nu_\alpha(t) \rangle \right|^2 \\
+&= \left| \sum_{i} U_{\beta i}^* U_{\alpha i} e^{-i E_i t} \right|^2.
+\end{align}
+
+Assuming the mass differences between the neutrino mass eigenstates are small compared to their energies, and using the approximation \(E_i \approx E - \frac{m_i^2}{2E}\), we can simplify the expression for the oscillation probability.
+The oscillation probability for a two-flavor scenario (\(\alpha\) and \(\beta\)) is given by:
+
+\begin{align}
+P(\nu_\alpha \to \nu_\beta; L) &= \sin^2(2\theta) \sin^2\left(\frac{\Delta m^2 L}{4 E}\right),
+\end{align}
+
+where \(\theta\) is the mixing angle between the two flavors, \(\Delta m^2 = m_2^2 - m_1^2\) is the mass-squared difference, \(L\) is the distance traveled by the neutrino, and \(E\) is the neutrino's energy.
+
+
+
