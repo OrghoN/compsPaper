@@ -18,11 +18,11 @@ The potential energy associated with the strong force increases with distance, e
 The QCD Lagrangian, describes the strong force
 
 \begin{align}
-  \mathcal{L}_{\text{QCD}} &= -\frac{1}{4} F_{\mu\nu}^a F^{\mu\nu a} + \bar{\psi}_i (i \gamma^\mu D_\mu - m_i) \psi_i,
+  \mathcal{L}_{\text{QCD}} &= -\frac{1}{4} F_{\mu\nu}^a F_a^{\mu\nu} + \bar{\psi}_i (i \gamma^\mu (D_\mu)_{ij} - m\delta_{ij}) \psi_j,
 \end{align}
 
-where \( F_{\mu\nu}^a \) is the field strength tensor for the gluon fields, \( \psi_i \) represents the quark fields, \( \gamma^\mu \) are the gamma matrices, and \( D_\mu \) is the covariant derivative that includes the gluon interaction.
-The term \( -\frac{1}{4} F_{\mu\nu}^a F^{\mu\nu a} \) describes the dynamics of the gluon fields, and \( \bar{\psi}_i (i \gamma^\mu D_\mu - m_i) \psi_i \) describes the interaction between quarks and the gluon field.
+where \( F_{\mu\nu}^a \) is the field strength tensor for the gluon fields, \( \psi_j \) represents the quark fields, \( \gamma^\mu \) are the gamma matrices, and \( (D_\mu)_{ij} \) is the covariant derivative that includes the gluon interaction.
+The term \( -\frac{1}{4} F_{\mu\nu}^a F_a^{\mu\nu} \) describes the dynamics of the gluon fields, and \( \bar{\psi}_i (i \gamma^\mu (D_\mu)_{ij} - m\delta_i) \psi_j \) describes the interaction between quarks and the gluon field.
 
 Another fascinating property of the strong force is asymptotic freedom, which means that quarks interact more weakly at shorter distances.
 This phenomenon is described by the running of the strong coupling constant \( \alpha_s \), which decreases as quarks come closer together:
@@ -40,7 +40,7 @@ The force between these quarks is mediated by gluons, which continuously exchang
 The interaction between quarks within hadrons can be described by the potential:
 
 \begin{align}
-  V(r) &= -\frac{4}{3} \frac{\alpha_s}{r},
+  V(r) &= -\frac{4}{3} \frac{\alpha_s}{r}+\sigma r,
 \end{align}
 
 where \( \alpha_s \) is the strong coupling constant and \( r \) is the distance between quarks.
