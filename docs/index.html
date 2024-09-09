@@ -2166,6 +2166,206 @@ RELU and softmax. Each have their own advantages and disadvantages and may even 
 same neural network
       <h4 class="subsectionHead"><span class="titlemark">3.3    </span> <a 
  id="x1-260003.3"></a>Activation Functions</h4>
+<!--l. 3--><p class="noindent" >One drawback of the sigmoid function is that its gradients can become very small for large positive or
+negative inputs, leading to the vanishing gradient problem during backpropagation. Backpropagation is an
+optimization algorithm used to minimize the error of neural networks by calculating the gradient of the
+loss function with respect to each weight through the chain rule and updating the weights
+accordingly.
+<!--l. 6--><p class="indent" >      The hyperbolic tangent function is another activation function that provides output values between
+-1 and 1. It is defined as:
+<!--l. 9--><p class="indent" >
+<table 
+class="align">
+                                    <tr><td 
+class="align-odd"><span 
+class="zptmcm7t-x-x-120">tanh</span><span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="zptmcm7m-x-x-120">z</span><span 
+class="zptmcm7t-x-x-120">) =</span> <img 
+src="main111x.png" alt=" z   - z
+e---e---
+ez+ e- z"  class="frac" align="middle"></td>                                    <td 
+class="align-even"></td>                                    <td 
+class="align-label"><a 
+ id="x1-26001r41"></a>(41)                                    </td></tr></table>
+                                                                                         
+                                                                                         
+<!--l. 13--><p class="indent" >      In a neural network, a neuron with the tanh activation function computes:
+<!--l. 15--><p class="indent" >
+<table 
+class="align">
+                        <tr><td 
+class="align-odd"><span 
+class="zptmcm7t-x-x-120">tanh</span><span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="zptmcm7v-x-x-120">&#x2211;</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">w</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">x</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7t-x-x-120">+</span><span 
+class="zptmcm7m-x-x-120">b</span><span 
+class="zptmcm7t-x-x-120">) =</span> <img 
+src="main112x.png" alt=" (&#x2211;iwixi+b)    -(&#x2211;iwixi+b)
+e-----------e----------
+e(&#x2211;iwixi+b)+  e-(&#x2211;iwixi+b)"  class="frac" align="middle"></td>                        <td 
+class="align-even"></td>                        <td 
+class="align-label"><a 
+ id="x1-26002r42"></a>(42)                        </td></tr></table>
+<!--l. 19--><p class="indent" >      The tanh function is zero-centered, which helps in making the learning process faster and more
+efficient compared to the sigmoid function. It also suffers from the vanishing gradient problem, though it
+generally performs better in practice than sigmoid.
+<!--l. 22--><p class="indent" >      The Rectified Linear Unit (ReLU) is a widely used activation function in deep learning models. It
+is defined as:
+<!--l. 25--><p class="indent" >
+                                                                                         
+                                                                                         
+<table 
+class="align">
+                                   <tr><td 
+class="align-odd">ReLU<span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="zptmcm7m-x-x-120">z</span><span 
+class="zptmcm7t-x-x-120">) =</span> <span 
+class="zptmcm7t-x-x-120">max</span><span 
+class="zptmcm7t-x-x-120">(0</span><span 
+class="zptmcm7m-x-x-120">,z</span><span 
+class="zptmcm7t-x-x-120">)</span></td>                                   <td 
+class="align-even"></td>                                   <td 
+class="align-label"><a 
+ id="x1-26003r43"></a>(43)                                   </td></tr></table>
+<!--l. 29--><p class="indent" >      For a neuron using ReLU, the output is computed as:
+<!--l. 31--><p class="indent" >
+<table 
+class="align">
+                          <tr><td 
+class="align-odd">ReLU<span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="zptmcm7v-x-x-120">&#x2211;</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">w</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">x</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7t-x-x-120">+</span><span 
+class="zptmcm7m-x-x-120">b</span><span 
+class="zptmcm7t-x-x-120">) =</span> <span 
+class="zptmcm7t-x-x-120">max</span><span 
+class="zptmcm7t-x-x-120">(0</span><span 
+class="zptmcm7m-x-x-120">,</span><span 
+class="zptmcm7v-x-x-120">&#x2211;</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">w</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">x</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7t-x-x-120">+</span><span 
+class="zptmcm7m-x-x-120">b</span><span 
+class="zptmcm7t-x-x-120">)</span></td>                          <td 
+class="align-even"></td>                          <td 
+class="align-label"><a 
+ id="x1-26004r44"></a>(44)                          </td></tr></table>
+<!--l. 35--><p class="indent" >      ReLU introduces non-linearity while being computationally efficient. It helps mitigate the
+vanishing gradient problem by allowing gradients to flow more easily through the network. However, it
+suffers from the &#8221;dying ReLU&#8221; problem where neurons can sometimes become inactive and only output
+zero.
+<!--l. 39--><p class="indent" >      To address the dying ReLU problem, the Leaky ReLU function introduces a small, non-zero
+gradient for negative inputs. It is defined as:
+<!--l. 42--><p class="indent" >
+                                                                                         
+                                                                                         
+<table 
+class="align">
+                             <tr><td 
+class="align-odd">Leaky ReLU<span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="zptmcm7m-x-x-120">z</span><span 
+class="zptmcm7t-x-x-120">) = </span><img 
+src="main113x.png" alt="(
+||{
+  z    if z &#x003E; 0
+||
+( &#x03B1;z   if z &#x2264; 0"  class="left" align="middle"></td>                             <td 
+class="align-even"></td>                             <td 
+class="align-label"><a 
+ id="x1-26005r45"></a>(45)                             </td></tr></table>
+<!--l. 49--><p class="indent" >      where <img 
+src="main114x.png" alt="&#x03B1; " class="math"> is a small constant (e.g., 0.01). For a neuron using Leaky ReLU, the output
+is:
+<!--l. 52--><p class="indent" >
+<table 
+class="align">
+               <tr><td 
+class="align-odd">Leaky ReLU<span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="zptmcm7v-x-x-120">&#x2211;</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">w</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">x</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7t-x-x-120">+</span><span 
+class="zptmcm7m-x-x-120">b</span><span 
+class="zptmcm7t-x-x-120">) = </span><img 
+src="main115x.png" alt="(
+||{ &#x2211;  w x + b      if &#x2211; w x + b &#x003E; 0
+    i i i            i  ii
+||
+( &#x03B1; (&#x2211;iwixi+ b)   if &#x2211;iwixi+ b &#x2264; 0"  class="left" align="middle"></td>               <td 
+class="align-even"></td>               <td 
+class="align-label"><a 
+ id="x1-26006r46"></a>(46)               </td></tr></table>
+<!--l. 59--><p class="indent" >      The Exponential Linear Unit (ELU) is designed to combine the benefits of ReLU and Leaky ReLU
+while addressing their limitations. It is defined as:
+                                                                                         
+                                                                                         
+<!--l. 62--><p class="indent" >
+<table 
+class="align">
+                              <tr><td 
+class="align-odd">ELU<span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="zptmcm7m-x-x-120">z</span><span 
+class="zptmcm7t-x-x-120">) = </span><img 
+src="main116x.png" alt="(
+|
+|{ z          if z &#x003E; 0
+
+||( &#x03B1; (ez- 1)  if z &#x2264; 0"  class="left" align="middle"></td>                              <td 
+class="align-even"></td>                              <td 
+class="align-label"><a 
+ id="x1-26007r47"></a>(47)                              </td></tr></table>
+<!--l. 69--><p class="indent" >      where <img 
+src="main117x.png" alt="&#x03B1; " class="math"> is a positive constant. For a neuron using ELU, the output is:
+<!--l. 72--><p class="indent" >
+<table 
+class="align">
+                 <tr><td 
+class="align-odd">ELU<span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="zptmcm7v-x-x-120">&#x2211;</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">w</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7m-x-x-120">x</span><sub><span 
+class="zptmcm7m-x-x-90">i</span></sub><span 
+class="zptmcm7t-x-x-120">+</span><span 
+class="zptmcm7m-x-x-120">b</span><span 
+class="zptmcm7t-x-x-120">) = </span><img 
+src="main118x.png" alt="(
+||
+{ &#x2211;iwixi+ b          if &#x2211;iwixi+ b &#x003E; 0
+
+||( &#x03B1; (e(&#x2211;iwixi+b)- 1)   if &#x2211; wixi+ b &#x2264; 0
+                        i"  class="left" align="middle"></td>                 <td 
+class="align-even"></td>                 <td 
+class="align-label"><a 
+ id="x1-26008r48"></a>(48)                 </td></tr></table>
+<!--l. 79--><p class="indent" >      ELU can help speed up learning and improve robustness to noise by reducing the impact of
+                                                                                         
+                                                                                         
+vanishing gradients.
 <!--l. 1--><p class="noindent" >
       <h4 class="subsectionHead"><span class="titlemark">3.4    </span> <a 
  id="x1-270003.4"></a>Neural Network</h4>
@@ -2233,7 +2433,7 @@ class="zptmcm7m-x-x-120">C</span><span
 class="zptmcm7t-x-x-120">(</span><span 
 class="zptmcm7m-x-x-120">w,b</span><span 
 class="zptmcm7t-x-x-120">) =</span> <img 
-src="main111x.png" alt="1--
+src="main119x.png" alt="1--
 2n"  class="frac" align="middle"><span 
 class="zptmcm7v-x-x-120">&#x2211;</span><sub><span 
 class="zptmcm7m-x-x-90">x</span></sub><span 
@@ -2248,7 +2448,7 @@ class="zptmcm7y-x-x-120">||</span><sup><span
 class="zptmcm7t-x-x-90">2</span></sup></td>                                <td 
 class="align-even"></td>                                <td 
 class="align-label"><a 
- id="x1-28003r41"></a>(41)                                </td></tr></table>
+ id="x1-28003r49"></a>(49)                                </td></tr></table>
 <!--l. 17--><p class="indent" >      Where <span 
 class="zptmcm7m-x-x-120">n </span>is the number of training samples and <span 
 class="zptmcm7m-x-x-120">a </span>is the vector of outputs from the network. We
@@ -2271,7 +2471,7 @@ class="zptmcm7y-x-x-120">&#x2207;</span><span
 class="zptmcm7m-x-x-120">C</span></td>                                       <td 
 class="align-even"></td>                                       <td 
 class="align-label"><a 
- id="x1-28004r42"></a>(42)                                       </td></tr></table>
+ id="x1-28004r50"></a>(50)                                       </td></tr></table>
 <!--l. 26--><p class="indent" >      where <span 
 class="zptmcm7m-x-x-120">v </span>is the set of weights and biases and <span 
 class="zptmcm7m-x-x-120">&#x03B7; </span>is the learning rate. The more aggressive we set <span 
