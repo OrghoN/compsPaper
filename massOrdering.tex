@@ -1,5 +1,53 @@
 \subsection{Neutrino Mass Ordering}
 
-Neutrinos are considered massless in the standard model but experimentally we know that it has some amount of mass.
-Just a very very tiny amount.
+In the early days of neutrino physics, the Standard Model treated neutrinos as massless particles but experimentally we know that they have some amount of mass.
+Just a very tiny amount.
 Not only do we not really know the masses of the neutrinos, the ordering of their masses is still an open question.
+
+For the mass orderingof neutrinos, we need to delve into the concept of neutrino mass eigenstates and flavor eigenstates.
+Neutrinos are produced and detected in flavor eigenstates (denoted by $\nu_e$, $\nu_\mu$, and $\nu_\tau$), but they propagate as mass eigenstates ($\nu_1$, $\nu_2$, and $\nu_3$).
+The relationship between these states is governed by the PMNS (Pontecorvo-Maki-Nakagawa-Sakata) matrix, which can be written as:
+
+\begin{align}
+  \begin{pmatrix}
+    \nu_e \\
+    \nu_\mu \\
+    \nu_\tau
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    U_{e1} & U_{e2} & U_{e3} \\
+    U_{\mu1} & U_{\mu2} & U_{\mu3} \\
+    U_{\tau1} & U_{\tau2} & U_{\tau3}
+  \end{pmatrix}
+  \begin{pmatrix}
+    \nu_1 \\
+    \nu_2 \\
+    \nu_3
+  \end{pmatrix}
+\end{align}
+
+The mass eigenstates $\nu_1$, $\nu_2$, and $\nu_3$ have different masses, but their exact ordering is not yet definitively known.
+There are two possible orderings for these masses:
+
+**Normal Ordering (NO)**: In this scenario, the masses of the neutrinos are ordered as \( m_1 < m_2 < m_3 \).
+This implies that the third eigenstate, $\nu_3$, has the highest mass.
+The mass differences between these states are described by:
+
+\begin{align}
+  \Delta m_{21}^2 &= m_2^2 - m_1^2 \\
+  \Delta m_{32}^2 &= m_3^2 - m_2^2 \\
+  \Delta m_{31}^2 &= m_3^2 - m_1^2
+\end{align}
+
+**Inverted Ordering (IO)**: Here, the masses are ordered as \( m_3 < m_1 < m_2 \).
+In this case, the lightest eigenstate is $\nu_3$.
+The corresponding mass differences are:
+
+\begin{align}
+  \Delta m_{21}^2 &= m_2^2 - m_1^2 \\
+  \Delta m_{32}^2 &= m_2^2 - m_3^2 \\
+  \Delta m_{31}^2 &= m_1^2 - m_3^2
+\end{align}
+
+Determining the correct mass ordering is essential for understanding the properties of neutrinos and has profound implications for cosmology and particle physics.
