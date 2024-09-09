@@ -10,6 +10,14 @@ It is defined as:
   \tanh(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
 \end{align}
 
+\begin{figure}[H]
+  % 
+  \centering
+  \includegraphics[width=80mm]{figures/tanh.png}
+  \caption{tanh Function}
+  \label{tanh}
+\end{figure}
+
 In a neural network, a neuron with the tanh activation function computes:
 
 \begin{align}
@@ -25,6 +33,14 @@ It is defined as:
 \begin{align}
   \text{ReLU}(z) = \max(0, z)
 \end{align}
+
+\begin{figure}[H]
+  % 
+  \centering
+  \includegraphics[width=80mm]{figures/relu.png}
+  \caption{RELU function}
+  \label{relu}
+\end{figure}
 
 For a neuron using ReLU, the output is computed as:
 
@@ -47,6 +63,14 @@ It is defined as:
 \end{align}
 
 where \( \alpha \) is a small constant (e.g., 0.01).
+
+\begin{figure}[H]
+  % 
+  \centering
+  \includegraphics[width=80mm]{figures/lrelu.png}
+  \caption{Leaky RELU function}
+  \label{lrelu}
+\end{figure}
 For a neuron using Leaky ReLU, the output is:
 
 \begin{align}
@@ -67,6 +91,15 @@ It is defined as:
 \end{align}
 
 where \( \alpha \) is a positive constant.
+
+\begin{figure}[H]
+  % Different Cite
+  % https://www.researchgate.net/figure/The-exponential-linear-unit-ELU-activation-function_fig3_350283420
+  \centering
+  \includegraphics[width=80mm]{figures/elu.png}
+  \caption{ELU function}
+  \label{elu}
+\end{figure}
 For a neuron using ELU, the output is:
 
 \begin{align}
