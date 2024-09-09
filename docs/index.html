@@ -187,7 +187,7 @@ href="#x1-280003.5" id="QQ2-1-48">Gradient Descent</a></span>
 <br />      &#x00A0;&#x00A0;<span class="subsectionToc" >3.6 <a 
 href="#x1-290003.6" id="QQ2-1-49">Convolutional Neural Networks</a></span>
 <br />      &#x00A0;&#x00A0;<span class="subsectionToc" >3.7 <a 
-href="#x1-300003.7" id="QQ2-1-51">Graph Neural Network</a></span>
+href="#x1-300003.7" id="QQ2-1-51">Graph Neural Networks</a></span>
 <br />      &#x00A0;&#x00A0;<span class="subsectionToc" >3.8 <a 
 href="#x1-310003.8" id="QQ2-1-52">Model Development</a></span>
 <br />      &#x00A0;&#x00A0;<span class="subsectionToc" >3.9 <a 
@@ -2819,7 +2819,147 @@ effective for various image processing tasks.
                                                                                          
                                                                                          
       <h4 class="subsectionHead"><span class="titlemark">3.7    </span> <a 
- id="x1-300003.7"></a>Graph Neural Network</h4>
+ id="x1-300003.7"></a>Graph Neural Networks</h4>
+<!--l. 3--><p class="noindent" >Graph Neural Networks (GNNs) extend neural network methodologies to handle data represented in the
+form of graphs. GNNs are designed to work with the complex, non-Euclidean structure of graphs. Graphs
+consist of nodes (or vertices) and edges (connections between nodes), and GNNs leverage these structures
+to learn representations of nodes and their relationships.
+<!--l. 7--><p class="indent" >      To understand how GNNs function, it&#8217;s important to break down their key components: node
+features, edge features, and the message-passing mechanism.
+<!--l. 9--><p class="indent" >      In a graph, each node can have associated features, which are typically represented as vectors. If
+we denote the feature vector of node <img 
+src="main144x.png" alt="v " class="math"> as <img 
+src="main145x.png" alt="hv  " class="math">, then the node features for all nodes in the
+graph can be organized into a matrix <img 
+src="main146x.png" alt="H  " class="math">, where each row corresponds to a node&#8217;s feature
+vector.
+<!--l. 12--><p class="indent" >      Similarly, edges in a graph can also have features. For an edge connecting nodes <img 
+src="main147x.png" alt="u " class="math"> and <img 
+src="main148x.png" alt="v " class="math">, we
+denote the edge features as <img 
+src="main149x.png" alt="euv  " class="math">. These features can be organized into an edge feature matrix
+<img 
+src="main150x.png" alt="E  " class="math">.
+<!--l. 16--><p class="indent" >      The core idea of GNNs is the message-passing mechanism, which allows nodes to aggregate
+information from their neighbors. This process involves the following steps:
+<!--l. 19--><p class="indent" >
+      <ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-30002x1">
+      <!--l. 21--><p class="noindent" >Message Computation: For each node <img 
+src="main151x.png" alt="v " class="math">, we compute messages from its neighboring nodes
+      <img 
+src="main152x.png" alt="N  (v)  " class="math">. The message <img 
+src="main153x.png" alt="muv  " class="math"> from node <img 
+src="main154x.png" alt="u " class="math"> to node <img 
+src="main155x.png" alt="v " class="math"> is typically computed using a function
+      <img 
+src="main156x.png" alt="&#x03D5; " class="math">, which can depend on the features of both nodes and the edge between them:
+      <!--l. 25--><p class="noindent" >
+                                                                                         
+                                                                                         
+      <table 
+class="align">
+                                                         <tr><td 
+class="align-odd"><span 
+class="zptmcm7m-x-x-120">m</span><sub><span 
+class="zptmcm7m-x-x-90">uv</span></sub></td>                                                <td 
+class="align-even"> <span 
+class="zptmcm7t-x-x-120">= </span><span 
+class="zptmcm7m-x-x-120">&#x03D5;</span><span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="ptmb7t-x-x-120">h</span><sub><span 
+class="zptmcm7m-x-x-90">u</span></sub><span 
+class="zptmcm7m-x-x-120">,</span><span 
+class="ptmb7t-x-x-120">h</span><sub><span 
+class="zptmcm7m-x-x-90">v</span></sub><span 
+class="zptmcm7m-x-x-120">,</span><span 
+class="ptmb7t-x-x-120">e</span><sub><span 
+class="zptmcm7m-x-x-90">uv</span></sub><span 
+class="zptmcm7t-x-x-120">)</span></td>                                                                                      <td 
+class="align-label"><a 
+ id="x1-30003r60"></a>(60)
+                                                         </td></tr><tr><td 
+class="align-odd"></td>                                                               <td 
+class="align-even"> <span 
+class="zptmcm7t-x-x-120">= </span><span 
+class="zptmcm7m-x-x-120">&#x03D5;</span><span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="ptmb7t-x-x-120">h</span><sub><span 
+class="zptmcm7m-x-x-90">u</span></sub><span 
+class="zptmcm7m-x-x-120">,</span><span 
+class="ptmb7t-x-x-120">e</span><sub><span 
+class="zptmcm7m-x-x-90">uv</span></sub><span 
+class="zptmcm7t-x-x-120">)</span></td>                                                                                          <td 
+class="align-label"><a 
+ id="x1-30004r61"></a>(61)                                                         </td></tr></table>
+      </li>
+<li 
+  class="enumerate" id="x1-30006x2">
+      <!--l. 30--><p class="noindent" >Aggregation: After computing the messages, each node aggregates the messages from its
+      neighbors. The aggregation function <img 
+src="main157x.png" alt="AG G  " class="math"> could be a sum, mean, or a more complex
+      operation:
+      <!--l. 34--><p class="noindent" >
+      <table 
+class="align">
+                                                        <tr><td 
+class="align-odd"><span 
+class="ptmb7t-x-x-120">m</span><sub><span 
+class="zptmcm7m-x-x-90">v</span></sub></td>                                               <td 
+class="align-even"> <span 
+class="zptmcm7t-x-x-120">=</span> AGG<sub><span 
+class="zptmcm7m-x-x-90">u</span><span 
+class="zptmcm7y-x-x-90">&#x2208;<img 
+src="zptmcm7y-9-4e.png" alt="N" class="-90x-x-4e" /></span><span 
+class="zptmcm7t-x-x-90">(</span><span 
+class="zptmcm7m-x-x-90">v</span><span 
+class="zptmcm7t-x-x-90">)</span></sub><span 
+class="zptmcm7m-x-x-120">m</span><sub><span 
+class="zptmcm7m-x-x-90">uv</span></sub></td>                                                                                              <td 
+class="align-label"><a 
+ id="x1-30007r62"></a>(62)                                                        </td></tr></table>
+                                                                                         
+                                                                                         
+      </li>
+<li 
+  class="enumerate" id="x1-30009x3">
+      <!--l. 38--><p class="noindent" >Update: The aggregated message is then used to update the node&#8217;s feature vector. This update
+      function <img 
+src="main158x.png" alt="U PD ATE  " class="math"> often involves a neural network layer like a fully connected layer or a more
+      complex function:
+      <!--l. 42--><p class="noindent" >
+      <table 
+class="align">
+                                                       <tr><td 
+class="align-odd"><span 
+class="ptmb7t-x-x-120">h</span><sub><span 
+class="zptmcm7m-x-x-90">v</span></sub><span 
+class="zptmcm7y-x-x-120">&#x2032;</span></td>                  <td 
+class="align-even"><span 
+class="zptmcm7t-x-x-120">=</span> UPDATE<span 
+class="zptmcm7t-x-x-120">(</span><span 
+class="ptmb7t-x-x-120">h</span><sub><span 
+class="zptmcm7m-x-x-90">v</span></sub><span 
+class="zptmcm7m-x-x-120">,</span><span 
+class="ptmb7t-x-x-120">m</span><sub><span 
+class="zptmcm7m-x-x-90">v</span></sub><span 
+class="zptmcm7t-x-x-120">)</span></td>                                                                                  <td 
+class="align-label"><a 
+ id="x1-30010r63"></a>(63)                                                       </td></tr></table>
+      <!--l. 46--><p class="noindent" >The updated feature vector <img 
+src="main159x.png" alt=" &#x2032;
+hv  " class="math"> represents the new state of the node after considering its
+      neighbors.
+      <!--l. 48--><p class="noindent" >Different GNN architectures can use various choices for the aggregation and update
+      functions.
+      </li></ol>
+<!--l. 52--><p class="indent" >      Graph Neural Networks allow for the processing of graph-structured data by iteratively updating
+node features through message passing. This approach allows GNNs to capture complex relationships
+between nodes and learn meaningful representations that are useful for various tasks such as node
+classification and graph classification.
+                                                                                         
+                                                                                         
 <!--l. 1--><p class="noindent" >
       <h4 class="subsectionHead"><span class="titlemark">3.8    </span> <a 
  id="x1-310003.8"></a>Model Development</h4>

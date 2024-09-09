@@ -1,0 +1,53 @@
+\subsection{Graph Neural Networks}
+
+Graph Neural Networks (GNNs) extend neural network methodologies to handle data represented in the form of graphs.
+GNNs are designed to work with the complex, non-Euclidean structure of graphs.
+Graphs consist of nodes (or vertices) and edges (connections between nodes), and GNNs leverage these structures to learn representations of nodes and their relationships.
+
+To understand how GNNs function, it's important to break down their key components: node features, edge features, and the message-passing mechanism.
+
+In a graph, each node can have associated features, which are typically represented as vectors.
+If we denote the feature vector of node \( v \) as \( \mathbf{h}_v \), then the node features for all nodes in the graph can be organized into a matrix \( \mathbf{H} \), where each row corresponds to a node's feature vector.
+
+Similarly, edges in a graph can also have features.
+For an edge connecting nodes \( u \) and \( v \), we denote the edge features as \( \mathbf{e}_{uv} \).
+These features can be organized into an edge feature matrix \( \mathbf{E} \).
+
+The core idea of GNNs is the message-passing mechanism, which allows nodes to aggregate information from their neighbors.
+This process involves the following steps:
+
+\begin{enumerate}
+
+\item Message Computation:
+  For each node \( v \), we compute messages from its neighboring nodes \( \mathcal{N}(v) \).
+  The message \( m_{uv} \) from node \( u \) to node \( v \) is typically computed using a function \( \phi \), which can depend on the features of both nodes and the edge between them:
+
+  \begin{align}
+    m_{uv} &= \phi(\mathbf{h}_u, \mathbf{h}_v, \mathbf{e}_{uv}) \\
+           &= \phi(\mathbf{h}_u, \mathbf{e}_{uv})
+  \end{align}
+
+\item Aggregation:
+  After computing the messages, each node aggregates the messages from its neighbors.
+  The aggregation function \( \text{AGG} \) could be a sum, mean, or a more complex operation:
+
+  \begin{align}
+    \mathbf{m}_v &= \text{AGG}_{u \in \mathcal{N}(v)} m_{uv}
+  \end{align}
+
+\item Update:
+  The aggregated message is then used to update the node’s feature vector.
+  This update function \( \text{UPDATE} \) often involves a neural network layer like a fully connected layer or a more complex function:
+
+  \begin{align}
+    \mathbf{h}_v' &= \text{UPDATE}(\mathbf{h}_v, \mathbf{m}_v)
+  \end{align}
+
+  The updated feature vector \( \mathbf{h}_v' \) represents the new state of the node after considering its neighbors.
+
+  Different GNN architectures can use various choices for the aggregation and update functions.
+
+\end{enumerate}
+
+Graph Neural Networks allow for the processing of graph-structured data by iteratively updating node features through message passing.
+This approach allows GNNs to capture complex relationships between nodes and learn meaningful representations that are useful for various tasks such as node classification and graph classification.
