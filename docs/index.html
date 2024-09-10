@@ -192,8 +192,10 @@ href="#x1-300003.8" id="QQ2-1-55">Model Development</a></span>
 href="#x1-310003.9" id="QQ2-1-57">Model Optimization</a></span>
 <br />      &#x00A0;<span class="sectionToc" >4 <a 
 href="#x1-320004" id="QQ2-1-58">Reconstruction using SPINE</a></span>
+<br />      &#x00A0;&#x00A0;<span class="subsectionToc" >4.1 <a 
+href="#x1-330004.1" id="QQ2-1-60">The SPINE Reconstruction Pipeline</a></span>
 <br />      &#x00A0;<span class="sectionToc" ><a 
-href="#Q1-1-60">References</a></span>
+href="#Q1-1-62">References</a></span>
       </div>
                                                                                          
                                                                                          
@@ -218,34 +220,37 @@ href="#x1-7005r3">Rutherford&#8217;s atomic model[17]</a></span><br /><span clas
 href="#x1-7006r4">Bohr&#8217;s model of the
 hydrogen atom[20]</a></span><br /><span class="lofToc" >5&#x00A0;<a 
 href="#x1-8001r5">Double Slit Experiment[25]</a></span><br /><span class="lofToc" >6&#x00A0;<a 
-href="#x1-10002r6">Atomic orbitals of the
-electron in a hydrogen atom</a></span><br /><span class="lofToc" >7&#x00A0;<a 
-href="#x1-12001r7">Quarks inside a proton. Labelled u for up and d
-for down</a></span><br /><span class="lofToc" >8&#x00A0;<a 
+href="#x1-10002r6">Atomic orbitals of
+the electron in a hydrogen atom</a></span><br /><span class="lofToc" >7&#x00A0;<a 
+href="#x1-12001r7">Quarks inside a proton. Labelled u for
+up and d for down</a></span><br /><span class="lofToc" >8&#x00A0;<a 
 href="#x1-21001r8">Cartoon of the DUNE setup</a></span><br /><span class="lofToc" >9&#x00A0;<a 
-href="#x1-21002r9">Design of the DUNE ND with <span 
+href="#x1-21002r9">Design of the DUNE
+ND with <span 
 class="zptmcm7t-x-x-120">5</span><span 
 class="zptmcm7y-x-x-120">&#x00D7;</span><span 
-class="zptmcm7t-x-x-120">7</span>
-modules</a></span><br /><span class="lofToc" >10&#x00A0;<a 
+class="zptmcm7t-x-x-120">7 </span>modules</a></span><br /><span class="lofToc" >10&#x00A0;<a 
 href="#x1-21003r10">Cutaway image of a module</a></span><br /><span class="lofToc" >11&#x00A0;<a 
-href="#x1-21004r11">Pictures of the first module to be build
-(Module-0)</a></span><br /><span class="lofToc" >12&#x00A0;<a 
-href="#x1-22001r12">Example of a basic decision tree</a></span><br /><span class="lofToc" >13&#x00A0;<a 
-href="#x1-22002r13">Example of a basic Neural
-Net</a></span><br /><span class="lofToc" >14&#x00A0;<a 
+href="#x1-21004r11">Pictures of
+the first module to be build (Module-0)</a></span><br /><span class="lofToc" >12&#x00A0;<a 
+href="#x1-22001r12">Example of a basic decision
+tree</a></span><br /><span class="lofToc" >13&#x00A0;<a 
+href="#x1-22002r13">Example of a basic Neural Net</a></span><br /><span class="lofToc" >14&#x00A0;<a 
 href="#x1-23003r14">Perceptron Neuron</a></span><br /><span class="lofToc" >15&#x00A0;<a 
-href="#x1-23005r15">Perceptron network</a></span><br /><span class="lofToc" >16&#x00A0;<a 
+href="#x1-23005r15">Perceptron
+network</a></span><br /><span class="lofToc" >16&#x00A0;<a 
 href="#x1-24004r16">Sigmoid Function</a></span><br /><span class="lofToc" >17&#x00A0;<a 
-href="#x1-25002r17">tanh
-Function</a></span><br /><span class="lofToc" >18&#x00A0;<a 
+href="#x1-25002r17">tanh Function</a></span><br /><span class="lofToc" >18&#x00A0;<a 
 href="#x1-25005r18">RELU function</a></span><br /><span class="lofToc" >19&#x00A0;<a 
-href="#x1-25008r19">Leaky RELU function</a></span><br /><span class="lofToc" >20&#x00A0;<a 
+href="#x1-25008r19">Leaky
+RELU function</a></span><br /><span class="lofToc" >20&#x00A0;<a 
 href="#x1-25011r20">ELU function</a></span><br /><span class="lofToc" >21&#x00A0;<a 
-href="#x1-26001r21">Parts
-of a Neural Net</a></span><br /><span class="lofToc" >22&#x00A0;<a 
-href="#x1-28001r22">Cartoon depicting layers of a CNN</a></span><br /><span class="lofToc" >23&#x00A0;<a 
-href="#x1-30001r23">Model development</a></span><br />
+href="#x1-26001r21">Parts of a Neural Net</a></span><br /><span class="lofToc" >22&#x00A0;<a 
+href="#x1-28001r22">Cartoon
+depicting layers of a CNN</a></span><br /><span class="lofToc" >23&#x00A0;<a 
+href="#x1-30001r23">Model development</a></span><br /><span class="lofToc" >24&#x00A0;<a 
+href="#x1-32003r24">Some reconstructed
+events from the module-0 prototype for the DUNE Near Detector</a></span><br />
       </div>
                                                                                          
                                                                                          
@@ -3191,6 +3196,35 @@ throughput.
                                                                                          
       <h3 class="sectionHead"><span class="titlemark">4    </span> <a 
  id="x1-320004"></a>Reconstruction using SPINE</h3>
+<!--l. 3--><p class="noindent" >When working with LArTPC detectors, fundamentally, all it returns is a series of voltages
+that have been read out to the readout chips. To get to a physics object from just a number
+of voltages, a lot of work has to be done. This process of converting from raw hits
+<span class="footnote-mark"><a 
+href="main8.html#fn7x0"><sup class="textsuperscript">7</sup></a></span><a 
+ id="x1-32001f7"></a> to
+physics objects is called reconstruction.
+<!--l. 9--><p class="indent" >      <hr class="figure"><div class="figure" 
+>
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!--l. 12--><p class="noindent" ><img 
+src="figures/mod0Events.png" alt="PIC"  
+width="341" height="341" > <a 
+ id="x1-32003r24"></a>
+<br />                                                                                         <div class="caption" 
+><span class="id">
+Figure&#x00A0;24. </span><span  
+class="content">Some reconstructed events from the module-0 prototype for the DUNE Near Detector </span></div><!--tex4ht:label?: x1-32003r24 -->
+                                                                                         
+                                                                                         
+<!--l. 15--><p class="indent" >      </div><hr class="endfigure">
+<!--l. 17--><p class="indent" >      There are a number of algorithims to do reconstruction of events, oftentimes with their own
+idiosyncracies, advantages and disadvantages. The SPINE package is one that uses machine learning to
+perform this reconstruction.
+      <h4 class="subsectionHead"><span class="titlemark">4.1    </span> <a 
+ id="x1-330004.1"></a>The SPINE Reconstruction Pipeline</h4>
                                                                                          
                                                                                          
                                                                                          
@@ -3198,9 +3232,9 @@ throughput.
                                                                                          
                                                                                          
       <h3 class="likesectionHead"><a 
- id="x1-33000"></a>References</h3>
+ id="x1-34000"></a>References</h3>
 <a 
- id="Q1-1-60"></a>
+ id="Q1-1-62"></a>
 <!--l. 1--><p class="noindent" >
      <div class="thebibliography">
      <p class="bibitem" ><span class="biblabel">
