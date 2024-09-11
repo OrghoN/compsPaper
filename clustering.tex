@@ -1,0 +1,32 @@
+\subsection{Particle Clustering}
+
+Once the semantic segmentation is done, their results get passed onto the spice GNN.
+The purpose of this GNN is to group different voxels together if they belong to the same shower or track.
+The SPICE (Sparsity-preserving Invariant Convolutional Embedding) model is a novel approach designed to address challenges in graph-based learning by leveraging sparsity and invariance principles.
+At its core, SPICE utilizes convolutional operations that preserve the structural sparsity of graphs, which is crucial for efficiently processing large-scale and complex graph data.
+Lucky for us, neutrino events are incredibly sparse.
+By maintaining sparsity, SPICE reduces computational overhead and memory usage, making it scalable to larger graphs.
+The invariant convolutional embeddings produced by SPICE ensure that the model is robust to transformations and perturbations in graph structures, such as node and edge additions or deletions, thereby enhancing its generalization capabilities.
+
+In practical terms, SPICE integrates several advanced techniques to optimize graph learning tasks.
+The model incorporates a sparse convolutional layer that operates directly on the non-zero elements of graph adjacency matrices, bypassing the need for dense matrix operations that can be computationally expensive.
+Additionally, SPICE applies invariant transformations that allow the network to remain effective even when the graph undergoes structural changes.
+
+\begin{figure}[H]
+  % 
+  \centering
+  \includegraphics[width=120mm]{figures/gnn.png}
+  \caption{Architecture of the clustering GNN}
+  \label{gnn}
+\end{figure}
+
+This clustering is done in separate parts between the tracks and showers before coming together to cluster interactions.
+
+\begin{figure}[H]
+  % OWN
+  \centering
+  \includegraphics[width=120mm]{figures/clusteringPerformance.png}
+  \caption{Box and whisker plot showing performance of clustering}
+  \label{clusteringPerformance}
+\end{figure}
+

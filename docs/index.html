@@ -170,8 +170,10 @@ href="#x1-310003.9" id="QQ2-1-57">Model Optimization</a></span>
 href="#x1-320004" id="QQ2-1-58">Reconstruction using SPINE</a></span>
 <br />      &#x00A0;&#x00A0;<span class="subsectionToc" >4.1 <a 
 href="#x1-330004.1" id="QQ2-1-61">Semantic Segmentation and PPN</a></span>
+<br />      &#x00A0;&#x00A0;<span class="subsectionToc" >4.2 <a 
+href="#x1-340004.2" id="QQ2-1-65">Particle Clustering</a></span>
 <br />      &#x00A0;<span class="sectionToc" ><a 
-href="#Q1-1-66">References</a></span>
+href="#Q1-1-69">References</a></span>
       </div>
                                                                                          
                                                                                          
@@ -233,7 +235,10 @@ href="#x1-33001r26">UResNet Architecture</a></span><br /><span class="lofToc" >2
 href="#x1-33002r27">Semantic Segmentation Event
 display comparing monte carlo truth and reconstructed prediction</a></span><br /><span class="lofToc" >28&#x00A0;<a 
 href="#x1-33003r28">Confusion
-Matrix showing performance of semantic segmentation</a></span><br />
+Matrix showing performance of semantic segmentation</a></span><br /><span class="lofToc" >29&#x00A0;<a 
+href="#x1-34001r29">Architecture of the
+clustering GNN</a></span><br /><span class="lofToc" >30&#x00A0;<a 
+href="#x1-34002r30">Box and whisker plot showing performance of clustering</a></span><br />
       </div>
                                                                                          
                                                                                          
@@ -3349,9 +3354,62 @@ getting the right answers. The rows are predictions while the columns are the la
 simulation.
 <!--l. 60--><p class="indent" >      The full SPINE pipeline was trained on a Set of 400k (train) + 100k (validation) 2x2 simulated
 images. Isotropic particle bombs (<span 
-class="zptmcm7m-x-x-120">&#x03BD;</span>-like)overlayed with isotropic particles (rock-like) Set of &#x00A0;40 k NuMI
-events (MiniRun3 simulation) processed so far through larnd2supera So the performance numbers reflect
-this training environment.
+class="zptmcm7m-x-x-120">&#x03BD;</span>-like)overlayed with isotropic particles (rock-like) So the performance
+numbers reflect this training environment.
+      <h4 class="subsectionHead"><span class="titlemark">4.2    </span> <a 
+ id="x1-340004.2"></a>Particle Clustering</h4>
+<!--l. 3--><p class="noindent" >Once the semantic segmentation is done, their results get passed onto the spice GNN. The purpose of this
+GNN is to group different voxels together if they belong to the same shower or track. The SPICE
+(Sparsity-preserving Invariant Convolutional Embedding) model is a novel approach designed to address
+challenges in graph-based learning by leveraging sparsity and invariance principles. At its core, SPICE
+utilizes convolutional operations that preserve the structural sparsity of graphs, which is crucial
+for efficiently processing large-scale and complex graph data. Lucky for us, neutrino events
+are incredibly sparse. By maintaining sparsity, SPICE reduces computational overhead and
+memory usage, making it scalable to larger graphs. The invariant convolutional embeddings
+produced by SPICE ensure that the model is robust to transformations and perturbations in graph
+structures, such as node and edge additions or deletions, thereby enhancing its generalization
+capabilities.
+<!--l. 11--><p class="indent" >      In practical terms, SPICE integrates several advanced techniques to optimize graph learning tasks.
+The model incorporates a sparse convolutional layer that operates directly on the non-zero elements of
+graph adjacency matrices, bypassing the need for dense matrix operations that can be computationally
+expensive. Additionally, SPICE applies invariant transformations that allow the network to remain
+effective even when the graph undergoes structural changes.
+<!--l. 15--><p class="indent" >      <hr class="figure"><div class="figure" 
+>
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!--l. 18--><p class="noindent" ><img 
+src="figures/gnn.png" alt="PIC"  
+width="341" height="341" > <a 
+ id="x1-34001r29"></a>
+<br />                                                                                         <div class="caption" 
+><span class="id">
+Figure&#x00A0;29. </span><span  
+class="content">Architecture of the clustering GNN                                               </span></div><!--tex4ht:label?: x1-34001r29 -->
+                                                                                         
+                                                                                         
+<!--l. 21--><p class="indent" >      </div><hr class="endfigure">
+<!--l. 23--><p class="indent" >      This clustering is done in separate parts between the tracks and showers before coming together to
+cluster interactions.
+<!--l. 25--><p class="indent" >      <hr class="figure"><div class="figure" 
+>
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+<!--l. 28--><p class="noindent" ><img 
+src="figures/clusteringPerformance.png" alt="PIC"  
+width="341" height="341" > <a 
+ id="x1-34002r30"></a>
+<br />                                                                                         <div class="caption" 
+><span class="id">
+Figure&#x00A0;30. </span><span  
+class="content">Box and whisker plot showing performance of clustering                           </span></div><!--tex4ht:label?: x1-34002r30 -->
+                                                                                         
+                                                                                         
+<!--l. 31--><p class="indent" >      </div><hr class="endfigure">
                                                                                          
                                                                                          
                                                                                          
@@ -3359,9 +3417,9 @@ this training environment.
                                                                                          
                                                                                          
       <h3 class="likesectionHead"><a 
- id="x1-34000"></a>References</h3>
+ id="x1-35000"></a>References</h3>
 <a 
- id="Q1-1-66"></a>
+ id="Q1-1-69"></a>
 <!--l. 1--><p class="noindent" >
      <div class="thebibliography">
      <p class="bibitem" ><span class="biblabel">
