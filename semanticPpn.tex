@@ -27,7 +27,7 @@ The semantic segmentation reconstruction is supposed to take the raw voxels and 
 
 \item Low energy depositions
 
-\item if enabled) Ghost points
+\item Ghost points (if enabled) (Ambigous points from wire plane detectors)
 
 \end{itemize}
 
@@ -56,6 +56,12 @@ The performance of this stage can be seen in figure \ref{semanticPerformance}.
 \end{figure}
 
 Figure \ref{semanticPerformance}  is a confusion matrix. It has numbers that indicate how often the model is getting the right answers. The rows are predictions while the columns are the label from the simulation.
+Basically, for every event, the network runs  and makes a prediction.
+This prediction is then compared to the simulated truth.
+Once all the events are run through, the percentages are calculated and the numbers put in the appropriate positions in the matrix.
+The matrix shows that the model performs well at identifying tracks and showers but is still having  some difficulty with low energy depositions because it is harder to identify when it is a low energy deposition and when it should be part of something else.
+
+
 
 The full SPINE pipeline was trained on a Set of 400k (train) + 100k (validation) 2x2 simulated images.
 Isotropic particle bombs ($\nu$-like)overlayed with isotropic particles (rock-like)

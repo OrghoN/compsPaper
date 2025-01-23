@@ -23,7 +23,7 @@ These generate a series of 2D pictures rather than  a native 3D image that is ge
 \footnote{There is an algorithm called  Cluster3D.
   This algorithm processes wire LArTPC data, which consists of three 2D images, to generate 3D points.
   However, this algorithm can introduce inefficiencies, resulting in ghost points—erroneous 3D points that shouldn't be there.}
-The modules that are going to be part of the $2 \times 2$  prototype have pixellated planes, so we are good to use SPINE here \cite{drielsma2020clusteringelectromagneticshowersparticle}.
+The modules that are going to be part of the $2 \times 2$  prototype have pixellated planes, SPINE is a useful tool in this context. \cite{drielsma2020clusteringelectromagneticshowersparticle}.
 
 We start with a root file produced either by simulation or with real LArTPC data.
 That then gets run through LArCV  which is a C++ library to process LArTPC images.
