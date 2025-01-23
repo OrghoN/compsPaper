@@ -1,22 +1,22 @@
 \subsection{Convolutional Neural Networks}
 
-Convolutional Neural Networks (CNNs) are a specialized class of neural networks designed for processing data with grid-like topology, such as images.
+Convolutional Neural Networks (CNNs) are a specialized class of neural networks designed for processing data with grid-like topology, such as images\cite{LeCun_Bengio_Hinton_2015}.
 They are particularly effective for image classification and object detection due to their ability to capture spatial hierarchies in data.
-A CNN typically consists of several key layers: convolutional layers, activation layers, pooling layers, and fully connected layers.
+A CNN typically consists of several key layers: convolutional layers, activation layers, pooling layers, and fully connected layers \cite{Venkatesan_Li_2018}.
 Let's break down each layer and its role in the network.
 
 \begin{figure}[H]
   % https://vinodsblog.com/2018/10/15/everything-you-need-to-know-about-convolutional-neural-networks/
   \centering
   \includegraphics[width=120mm]{figures/cnn.png}
-  \caption{Cartoon depicting layers of a CNN}
+  \caption{Cartoon depicting layers of a CNN\cite{cnn_pic}}
   \label{cnn}
 \end{figure}
 
 Convolutional Layer
 
 The convolutional layer is the cornerstone of a CNN.
-It applies a set of filters (or kernels) to the input image to produce feature maps.
+It applies a set of filters (or kernels) to the input image to produce feature maps \cite{IBM_2024}.
 Each filter is a small matrix that slides over the input image to compute a dot product.
 
 Given an input image \( I \) of size \( H \times W \) (height \( H \) and width \( W \)) and a filter \( K \) of size \( k_h \times k_w \) (height \( k_h \) and width \( k_w \)), the output feature map \( O \) can be computed using the convolution operation:
@@ -43,7 +43,7 @@ This activation function helps in mitigating the vanishing gradient problem and 
 
 Pooling Layer
 
-The pooling layer reduces the spatial dimensions of the feature map, which helps in reducing computational complexity and preventing overfitting.
+The pooling layer reduces the spatial dimensions of the feature map, which helps in reducing computational complexity and preventing overfitting \cite{Yamaguchi_Sakamoto_Akabane_Fujimoto_1990}.
 The most common pooling operation is max pooling.
 For a pooling window of size \( p_h \times p_w \) and stride \( s \), the max pooling operation is defined as:
 
@@ -52,7 +52,7 @@ For a pooling window of size \( p_h \times p_w \) and stride \( s \), the max po
 \end{align}
 
 where \( O_{ReLU} \) is the feature map after applying the ReLU activation.
-Pooling reduces the dimensions of the feature map:
+Pooling reduces the dimensions of the feature map \cite{Ciresan_Meier_Schmidhuber_2012}:
 
 \begin{align}
   H_{out} &= \frac{H - p_h}{s} + 1 \\

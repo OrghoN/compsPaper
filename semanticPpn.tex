@@ -4,13 +4,13 @@ The first thing to handle is semantic segmentation; all that means is  voxel wis
 For this purpose, we use a very popular CNN model called UResNet.
 This model integrates the U-Net architecture, originally designed for biomedical image segmentation, with residual learning principles introduced by ResNet.
 By incorporating residual blocks into the U-Net framework, UResNet addresses the vanishing gradient problem and enhances feature learning across different layers of the network.
-This integration is achieved through skip connections between the encoder and decoder paths, which facilitate the flow of high-level features and spatial information, thus improving the accuracy of segmentation in complex image datasets.
+This integration is achieved through skip connections between the encoder and decoder paths, which facilitate the flow of high-level features and spatial information, thus improving the accuracy of segmentation in complex image datasets \cite{uresnet_2019}.
 
 \begin{figure}[H]
   % 
   \centering
   \includegraphics[width=120mm]{figures/uresnet.png}
-  \caption{UResNet Architecture}
+  \caption{UResNet Architecture \cite{Drielsma_2024}}
   \label{uresnet}
 \end{figure}
 
@@ -43,7 +43,7 @@ Since the $2 \times 2$ has a pixellated readout plane, we don't have to worry ab
 
 The other part of this step is the point proposal network (PPN).
 This is just 3 layers attached to the UResNet model.
-The job of the PPN is to pick out points of interest; namely the start of a shower, the start of a track and the end of a track.
+The job of the PPN is to pick out points of interest; namely the start of a shower, the start of a track and the end of a track \cite{Tilley_2021}.
 
 The performance of this stage can be seen in figure \ref{semanticPerformance}.
 

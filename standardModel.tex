@@ -9,13 +9,13 @@ Just like any foundational theory that undergirds a sub-field of a subject, the 
 One may definitely quibble about where our understanding of the fundamental particles starts from, after all, humans have been trying to find out the nature of our universe and the things that make it up going back as far as the 4th century BCE with Plato positing that everything is made up of 4 elements (water, wind, earth and fire)\cite{Timaeus}, but I think it makes sense to look at the elementary particles that make up the standard model as we know it today -- with the definite understanding that there may very well be physics that lies beyond the realm of the standard model.
 
 At its core, the Standard Model consists of two main categories of particles: fermions, which make up matter, and bosons, which mediate interactions.
-Fermions have $1/2$ integer spins while bosons have integer spins.
+Fermions have $1/2$ integer spins while bosons have integer spins \cite{Oerter}.
 
 \begin{figure}[H]
   % 
   \centering
   \includegraphics[width=80mm]{figures/sm.png}
-  \caption{The Elementary Particles in the Standard Model}
+  \caption{The Elementary Particles in the Standard Model \cite{standard_model}}
   \label{sm}
 \end{figure}
 
@@ -26,17 +26,17 @@ The fermions can be further categorized into quarks and leptons.
   \centering
   \includegraphics[width=100mm]{figures/protonQuarks.png}
   \caption{Quarks inside a proton.
-    Labelled u for up and d for down}
+    Labelled u for up and d for down\cite{quark}}
   \label{protonQuarks}
 \end{figure}
 
-Quarks are understood to be fundamental constituents of matter, forming the building blocks of protons, neutrons, and other hadrons (Composite subatomic particles that are made up of at least 2 quarks).
+Quarks are understood to be fundamental constituents of matter, forming the building blocks of protons, neutrons, and other hadrons (Composite subatomic particles that are made up of at least 2 quarks) \cite{quark_Brit_2024}.
 Quarks interact with each other via the strong force.We have so far discovered 6 flavors of quarks -- up (\(u\)), down (\(d\)), charm (\(c\)), strange (\(s\)), top (\(t\)), and bottom (\(b\)).
 Each flavor has different mass.
-These masses and their interactions with other particles are crucial for the stability and properties of atomic nuclei.
+These masses and their interactions with other particles are crucial for the stability and properties of atomic nuclei \cite{Nave_quark}.
 
 \begin{table}[h!]
-  % Could you please check if the numbers in the table are correct, I'm not 100 percent sure
+
   \centering
   \begin{tabular}{lrr}
     \toprule
@@ -50,20 +50,20 @@ These masses and their interactions with other particles are crucial for the sta
     Top (t)     & 172000 - 173000  & +\(\frac{2}{3}\) \\
     \bottomrule
   \end{tabular}
-  \caption{Quark Flavors and Their Approximate Masses}
+  \caption{Quark Flavors, Their Approximate Masses and Charges \cite{Nave_quark}}
   \label{quarkMass}
 \end{table}
 
 Each type of fermion carries a specific flavor and generation.
-For instance, the electron ($e$) belongs to the first generation, while the muon ($\mu$) and tau ($\tau$) belong to the second and third generations, respectively \footnote{The neutrino, despite being elusive, plays a significant role in weak interactions and lepton family conservation.}.
+For instance, the electron ($e$) belongs to the first generation, while the muon ($\mu$) and tau ($\tau$) belong to the second and third generations, respectively \cite{Nave_lepton} \footnote{The neutrino, despite being elusive, plays a significant role in weak interactions and lepton family conservation.}.
 
-The interactions between these particles are mediated by gauge bosons, which are the force carriers.
+The interactions between these particles are mediated by gauge bosons, which are the force carriers \cite{Gribbin_2000}\cite{Clark_2004}.
 The Standard Model includes the following gauge bosons:
 
 \begin{align}
-\text{Gauge Bosons:} & \quad \text{Photon } (A) \quad \text{(mediates electromagnetic force)} \\
+ & \quad \text{Photon } (\gamma) \quad \text{(mediates electromagnetic force)} \\
                     & \quad \text{W and Z bosons } (W^\pm, Z^0) \quad \text{(mediates weak force)} \\
-                    & \quad \text{Gluons } (g) \quad \text{(mediates strong force)}
+                    & \quad \text{Gluons } (g) \quad \text{(mediates strong force) \cite{Veltman_2004}}
 \end{align}
 
 The mathematical framework underpinning the Standard Model is primarily based on gauge theory, specifically the group $SU(3) \times SU(2) \times U(1)$.
@@ -76,12 +76,12 @@ Each of these groups corresponds to a different force:
 \end{align}
 
 The Higgs mechanism, a crucial part of the Standard Model, provides a mass to the W and Z bosons via spontaneous symmetry breaking.
-The Higgs field $\phi$ can be represented as:
+The Higgs field $\phi$ can be parameterized as:
 
 \begin{align}
-\phi(x) &= \frac{1}{\sqrt{2}} \begin{pmatrix} 0 \\ v + h(x) \end{pmatrix}
+\phi &= \frac{v+h}{\sqrt{2}}e^i{\frac{\chi}{v}}
 \end{align}
 
-where $v$ is the vacuum expectation value and $h(x)$ is the physical Higgs boson field.
-The mass terms for the gauge bosons arise when the Higgs field acquires a vacuum expectation value.
+where $h$, the Higgs boson and $\chi$, the Goldstone boson are real scalar fields which have no vacuum expectation value.
+The mass terms for the gauge bosons arise when the Higgs field acquires a vacuum expectation value\cite{Bernardi_2008}.
 

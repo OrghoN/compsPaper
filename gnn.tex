@@ -2,7 +2,7 @@
 
 Graph Neural Networks (GNNs) extend neural network methodologies to handle data represented in the form of graphs.
 GNNs are designed to work with the complex, non-Euclidean structure of graphs.
-Graphs consist of nodes (or vertices) and edges (connections between nodes), and GNNs leverage these structures to learn representations of nodes and their relationships.
+Graphs consist of nodes (or vertices) and edges (connections between nodes), and GNNs leverage these structures to learn representations of nodes and their relationships\cite{Scarselli_Gori_Tsoi_Hagenbuchner_Monfardini_2009}.
 
 To understand how GNNs function, it's important to break down their key components: node features, edge features, and the message-passing mechanism.
 
@@ -11,7 +11,7 @@ If we denote the feature vector of node \( v \) as \( \mathbf{h}_v \), then the 
 
 Similarly, edges in a graph can also have features.
 For an edge connecting nodes \( u \) and \( v \), we denote the edge features as \( \mathbf{e}_{uv} \).
-These features can be organized into an edge feature matrix \( \mathbf{E} \).
+These features can be organized into an edge feature matrix \( \mathbf{E} \) \cite{Wu_Cui_Pei_Zhao_2022}.
 
 The core idea of GNNs is the message-passing mechanism, which allows nodes to aggregate information from their neighbors.
 This process involves the following steps:
@@ -45,7 +45,7 @@ This process involves the following steps:
 
   The updated feature vector \( \mathbf{h}_v' \) represents the new state of the node after considering its neighbors.
 
-  Different GNN architectures can use various choices for the aggregation and update functions.
+  Different GNN architectures can use various choices for the aggregation and update functions \cite{Micheli_2009}.
 
 \end{enumerate}
 
