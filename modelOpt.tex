@@ -2,15 +2,15 @@
 
 There are two parts where a model can be optimized.
 The first is the training phase.
-Models can take a long time to train even if a lot of data is available which means it is often worth it to optimize the training phase.
-This sort of optimization is called hyperparameter optimization because the actual hyperparameters (weights and biases) aren't being tweaked but rather the parameters that guide how they are formed.
+Models can take a long time to train even if a lot of data is available which means it is often worth it to optimize the training phase \cite{Vapnik_1999}.
+This sort of optimization is called hyperparameter optimization because the actual hyperparameters (weights and biases) aren't being tweaked but rather the parameters that guide how they are formed \cite{Zell_1997}.
 It involves manipulating the structure of the network as well as changing factors such as the learning rate.
 The difference between a naive implementation and an optimized one may lead to a speedup of hours for the training.
 
 Training isn't however what a network is spending most of its time doing.
 Most of the time a network is used to query for answers, i.e.\ inference.
 Inference speedups can be done through a number of ways such as using more specialized hardware like FPGA's or working with TensorRT optimization.
-That can bring down the time it takes to query the model for information which can vastly affect number of events being processed in any time period thus increasing throughput.
+That can bring down the time it takes to query the model for information which can vastly affect number of events being processed in any time period thus increasing throughput \cite{MacKay_2019}.
 
 
 

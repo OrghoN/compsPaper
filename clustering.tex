@@ -30,5 +30,17 @@ This clustering is done in separate parts between the tracks and showers before 
   \label{clusteringPerformance}
 \end{figure}
 
+\begin{itemize}
+\item Efficiency: The proportion of true neutrino events correctly captured in their respective clusters, reflecting the model's ability to retain genuine signals.
+
+\item Purity: The degree to which clusters consist of events from a single true category, minimizing cross-contamination from unrelated interactions.
+
+\item ARI (Adjusted Rand Index): A metric comparing predicted and true clusters, adjusted for randomness, where higher values indicate better alignment in grouping neutrino events.
+\end{itemize}
+
+The graph shows that shower and track clustering performance is good.
+The values of the Michel electrons are a bit misleading since there weren't any in the dataset being tested which is why it looks perfect.
+It is not perfect and further development needs to be done on this.
+  
 Due to the modular nature of the $2 \times 2$ prototype , there can be quite large gaps between 2 parts of the same track or in the middle of a shower where the modules  switch over making the job of clustering more difficult than it would be in a monolithic detector.
 

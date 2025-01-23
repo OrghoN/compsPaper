@@ -4,13 +4,13 @@ The first thing to handle is semantic segmentation; all that means is  voxel wis
 For this purpose, we use a very popular CNN model called UResNet.
 This model integrates the U-Net architecture, originally designed for biomedical image segmentation, with residual learning principles introduced by ResNet.
 By incorporating residual blocks into the U-Net framework, UResNet addresses the vanishing gradient problem and enhances feature learning across different layers of the network.
-This integration is achieved through skip connections between the encoder and decoder paths, which facilitate the flow of high-level features and spatial information, thus improving the accuracy of segmentation in complex image datasets.
+This integration is achieved through skip connections between the encoder and decoder paths, which facilitate the flow of high-level features and spatial information, thus improving the accuracy of segmentation in complex image datasets \cite{uresnet_2019}.
 
 \begin{figure}[H]
   % 
   \centering
   \includegraphics[width=120mm]{figures/uresnet.png}
-  \caption{UResNet Architecture}
+  \caption{UResNet Architecture \cite{Drielsma_2024}}
   \label{uresnet}
 \end{figure}
 
@@ -27,7 +27,7 @@ The semantic segmentation reconstruction is supposed to take the raw voxels and 
 
 \item Low energy depositions
 
-\item if enabled) Ghost points
+\item Ghost points (if enabled) (Ambigous points from wire plane detectors)
 
 \end{itemize}
 
@@ -43,7 +43,7 @@ Since the $2 \times 2$ has a pixellated readout plane, we don't have to worry ab
 
 The other part of this step is the point proposal network (PPN).
 This is just 3 layers attached to the UResNet model.
-The job of the PPN is to pick out points of interest; namely the start of a shower, the start of a track and the end of a track.
+The job of the PPN is to pick out points of interest; namely the start of a shower, the start of a track and the end of a track \cite{Tilley_2021}.
 
 The performance of this stage can be seen in figure \ref{semanticPerformance}.
 
@@ -56,6 +56,12 @@ The performance of this stage can be seen in figure \ref{semanticPerformance}.
 \end{figure}
 
 Figure \ref{semanticPerformance}  is a confusion matrix. It has numbers that indicate how often the model is getting the right answers. The rows are predictions while the columns are the label from the simulation.
+Basically, for every event, the network runs  and makes a prediction.
+This prediction is then compared to the simulated truth.
+Once all the events are run through, the percentages are calculated and the numbers put in the appropriate positions in the matrix.
+The matrix shows that the model performs well at identifying tracks and showers but is still having  some difficulty with low energy depositions because it is harder to identify when it is a low energy deposition and when it should be part of something else.
+
+
 
 The full SPINE pipeline was trained on a Set of 400k (train) + 100k (validation) 2x2 simulated images.
 Isotropic particle bombs ($\nu$-like)overlayed with isotropic particles (rock-like)

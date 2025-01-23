@@ -1,7 +1,7 @@
 \subsection{Activation Functions}
 
 One drawback of the sigmoid function is that its gradients can become very small for large positive or negative inputs, leading to the vanishing gradient problem during backpropagation.
-Backpropagation is an optimization algorithm used to minimize the error of neural networks by calculating the gradient of the loss function with respect to each weight through the chain rule and updating the weights accordingly.
+Backpropagation is an optimization algorithm used to minimize the error of neural networks by calculating the gradient of the loss function with respect to each weight through the chain rule and updating the weights accordingly\cite{KELLEY_1960} \cite{Bryson_1962} .
 
 The hyperbolic tangent function is another activation function that provides output values between -1 and 1.
 It is defined as:
@@ -14,7 +14,7 @@ It is defined as:
   % 
   \centering
   \includegraphics[width=80mm]{figures/tanh.png}
-  \caption{tanh Function}
+  \caption{tanh Function \cite{Potrimba_2023}}
   \label{tanh}
 \end{figure}
 
@@ -38,7 +38,7 @@ It is defined as:
   % 
   \centering
   \includegraphics[width=80mm]{figures/relu.png}
-  \caption{RELU function}
+  \caption{RELU function \cite{Potrimba_2023}}
   \label{relu}
 \end{figure}
 
@@ -49,10 +49,10 @@ For a neuron using ReLU, the output is computed as:
 \end{align}
 
 ReLU introduces non-linearity while being computationally efficient.
-It helps mitigate the vanishing gradient problem by allowing gradients to flow more easily through the network.
+It helps mitigate the vanishing gradient problem by allowing gradients to flow more easily through the network\cite{Goodfellow_2016}.
 However, it suffers from the "dying ReLU" problem where neurons can sometimes become inactive and only output zero.
 
-To address the dying ReLU problem, the Leaky ReLU function introduces a small, non-zero gradient for negative inputs.
+To address the dying ReLU problem, the Leaky ReLU function introduces a small, non-zero gradient for negative inputs \cite{Maas_Hannun_Ng_2014}.
 It is defined as:
 
 \begin{align}
@@ -68,7 +68,7 @@ where \( \alpha \) is a small constant (e.g., 0.01).
   % 
   \centering
   \includegraphics[width=80mm]{figures/lrelu.png}
-  \caption{Leaky RELU function}
+  \caption{Leaky RELU function \cite{Potrimba_2023}}
   \label{lrelu}
 \end{figure}
 For a neuron using Leaky ReLU, the output is:
@@ -97,7 +97,7 @@ where \( \alpha \) is a positive constant.
   % https://www.researchgate.net/figure/The-exponential-linear-unit-ELU-activation-function_fig3_350283420
   \centering
   \includegraphics[width=80mm]{figures/elu.png}
-  \caption{ELU function}
+  \caption{ELU function \cite{Sheng_2021}}
   \label{elu}
 \end{figure}
 For a neuron using ELU, the output is:

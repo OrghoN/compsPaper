@@ -3,8 +3,8 @@
 When working with LArTPC detectors, fundamentally, all it returns is a series of voltages that have been read out to the  readout chips.
 To get to a physics object from just a number of  voltages, a lot of work has to be done.
 This process of converting from raw hits
-\footnote{The individual voltages from a channell}
-to physics objects is called reconstruction.
+\footnote{The individual voltages from a channel}
+to physics objects is called reconstruction \cite{Dominé_deSoux_Drielsma_Koh_Itay_Lin_Terao_Tsang_Usher_2021}.
 
 \begin{figure}[H]
   %  OWN
@@ -23,7 +23,7 @@ These generate a series of 2D pictures rather than  a native 3D image that is ge
 \footnote{There is an algorithm called  Cluster3D.
   This algorithm processes wire LArTPC data, which consists of three 2D images, to generate 3D points.
   However, this algorithm can introduce inefficiencies, resulting in ghost points—erroneous 3D points that shouldn't be there.}
-The modules that are going to be part of the $2 \times 2$  prototype have pixellated planes, so we are good to use SPINE here.
+The modules that are going to be part of the $2 \times 2$  prototype have pixellated planes, SPINE is a useful tool in this context. \cite{drielsma2020clusteringelectromagneticshowersparticle}.
 
 We start with a root file produced either by simulation or with real LArTPC data.
 That then gets run through LArCV  which is a C++ library to process LArTPC images.
@@ -34,11 +34,11 @@ After that, we can engage SPINE proper.
 \begin{figure}[H]
   % https://github.com/DeepLearnPhysics/spine?tab=readme-ov-file  \centering
   \includegraphics[width=120mm]{figures/spineSchematic.png}
-  \caption{Overview of the SPINE schematic}
+  \caption{Overview of the SPINE schematic\cite{SPINE_schematic}}
   \label{spineSchematic}
 \end{figure}
 
-SPINE consists of a number of machine learning models stitched together, workingin concert to get from raw hits to reconstructed outputs.
+SPINE consists of a number of machine learning models stitched together, working in concert to get from raw hits to reconstructed outputs.
 Let's break down each of the parts in turn.
 
 \input{semanticPpn}
